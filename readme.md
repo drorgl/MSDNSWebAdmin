@@ -4,9 +4,7 @@
 
 Web interface for managing Microsoft DNS, written in C#, MVC and WMI.
 
-DNSManagement wrapper supports all DNS features, Web interface supports 
-
-most of what is possible through the MMC snap-ins.
+DNSManagement wrapper supports all DNS features, Web interface supports most of what is possible through the MMC snap-ins.
 
 Major features:
 
