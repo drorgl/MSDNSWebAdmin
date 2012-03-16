@@ -1,12 +1,13 @@
 # Web interface for Microsoft DNS
 
-* Project needs a developer to take it under their wing, most features are not production ready and were barely tested *
+** Project needs a developer to take it under their wing, most features are not production ready and were barely tested **
 
 Web interface for managing Microsoft DNS, written in C#, MVC and WMI.
 
 DNSManagement wrapper supports all DNS features, Web interface supports most of what is possible through the MMC snap-ins.
 
 Major features:
+
 * Show EventLog
 * Audit Log
 * New/Edit/Delete forward lookup zones.
