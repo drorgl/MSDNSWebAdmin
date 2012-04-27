@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E03B4ECC-F09E-4BC9-9C27-5B8D57A4691B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DNSManagementTest</RootNamespace>
+    <AssemblyName>DNSManagementTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\BackupableTest.cs" />
+    <Compile Include="CacheTest.cs" />
+    <Compile Include="DomainTest.cs" />
+    <Compile Include="EventLog\EventLogEntryTest.cs" />
+    <Compile Include="EventLog\EventLoggingTest.cs" />
+    <Compile Include="Extensions\IPHelperTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootHintsTest.cs" />
+    <Compile Include="RR\AAAATypeTest.cs" />
+    <Compile Include="RR\AFSDBTypeTest.cs" />
+    <Compile Include="RR\ATypeTest.cs" />
+    <Compile Include="RR\CNAMETypeTest.cs" />
+    <Compile Include="RR\HINFOTypeTest.cs" />
+    <Compile Include="RR\ISDNTypeTest.cs" />
+    <Compile Include="RR\KEYTypeTest.cs" />
+    <Compile Include="RR\MBTypeTest.cs" />
+    <Compile Include="RR\MDTypeTest.cs" />
+    <Compile Include="RR\MFTypeTest.cs" />
+    <Compile Include="RR\MGTypeTest.cs" />
+    <Compile Include="RR\MINFOTypeTest.cs" />
+    <Compile Include="RR\MRTypeTest.cs" />
+    <Compile Include="RR\MXTypeTest.cs" />
+    <Compile Include="RR\NSTypeTest.cs" />
+    <Compile Include="RR\NXTTypeTest.cs" />
+    <Compile Include="RR\PTRTypeTest.cs" />
+    <Compile Include="RR\ResourceRecordTest.cs" />
+    <Compile Include="RR\RPTypeTest.cs" />
+    <Compile Include="RR\RTTypeTest.cs" />
+    <Compile Include="RR\SIGTypeTest.cs" />
+    <Compile Include="RR\SOATypeTest.cs" />
+    <Compile Include="RR\SRVTypeTest.cs" />
+    <Compile Include="RR\TXTTypeTest.cs" />
+    <Compile Include="RR\WINSRTypeTest.cs" />
+    <Compile Include="RR\WINSTypeTest.cs" />
+    <Compile Include="RR\WKSTypeTest.cs" />
+    <Compile Include="RR\X25TypeTest.cs" />
+    <Compile Include="ServerTest.cs" />
+    <Compile Include="ServiceManagerTest.cs" />
+    <Compile Include="ServiceTest.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="StatisticTest.cs" />
+    <Compile Include="Extensions\StringBuilderExtensionsTest.cs" />
+    <Compile Include="Extensions\UnixDateTimeTest.cs" />
+    <Compile Include="ZoneTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DNSManagement\DNSManagement.csproj">
+      <Project>{1C5C0CEE-7B14-4D4B-9ED1-F5BA75F40ADE}</Project>
+      <Name>DNSManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

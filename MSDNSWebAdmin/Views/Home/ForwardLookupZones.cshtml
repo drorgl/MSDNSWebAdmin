@@ -1,0 +1,173 @@
+﻿@{
+    Layout = null;
+    var zones = ViewData["zones"] as DNSManagement.Zone[];
+    string serverName = ViewData["serverName"] as string;
+}
+
+<a href="#" onclick="$('#newZone').show('slow');">@Html.GetLocalizedString("NewZone")...</a>
+<div class="divPanel" id="newZone" style="display:none;">
+    <input type="hidden" name="serverName" value="@serverName" />
+    <fieldset>
+        <legend>@Html.GetLocalizedString("NewZone")</legend>
+        <ul>
+            <li>
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("ZoneName")</legend>
+                    @Html.GetLocalizedString("ZoneNameHelp")
+                    <ul>
+                        <li>@Html.TextBoxForModel("ZoneName","")</li>
+
+                        <li>@Html.TextBoxForModel("OptionalAdminEmail","")</li>
+                    </ul>
+                </fieldset>
+            </li>
+
+            <li>
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("ZoneType")</legend>
+                    @Html.GetLocalizedString("ZoneTypeHelp")
+                    <ul>
+                        <li><label>@(Html.RadioButton("ZoneTypeCreate", DNSManagement.Zone.ZoneTypeCreate.Primary, true, new { onclick = "zoneTypeChange();" }))@Html.GetLocalizedString("PrimaryZone")<br />
+                            @Html.GetLocalizedString("PrimaryZoneHelp")</label>
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneTypeCreate", DNSManagement.Zone.ZoneTypeCreate.Secondary, false, new { onclick = "zoneTypeChange();" }))@Html.GetLocalizedString("SecondaryZone")<br />
+                            @Html.GetLocalizedString("SecondaryZoneHelp")</label>
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneTypeCreate", DNSManagement.Zone.ZoneTypeCreate.Stub, false, new { onclick = "zoneTypeChange();" }))@Html.GetLocalizedString("StabZone")<br />
+                            @Html.GetLocalizedString("StabZoneHelp")</label>
+                       </li>
+                       @Html.CheckboxForModel("StoreZoneInAD", false)
+                    </ul>
+                </fieldset>
+            </li>
+
+            <li class="showsecondary showstub" style="display:none;">
+            
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("MasterDNSServers")</legend>
+                    @*SHOW FOR SECONDARY/STUB*@
+
+                    @Html.GetLocalizedString("MasterDNSServersHelp")
+                    <table id="tblMasterDNSServers">
+                        <thead>
+                            <tr>
+                                <th>@Html.GetLocalizedString("IPAddress")</th>
+                                <th>@Html.GetLocalizedString("FQDN")</th>
+                                <th>@Html.GetLocalizedString("Validated")</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*<tr>
+                                <td><input type="hidden" name="MasterDNSServer" value="1.1.1.1" />1.1.1.1</td>
+                                <td>name.com</td>
+                                <td>validating...</td>
+                                <td>
+                                    <a onclick="$(this).closest('tr').remove();"><img src="/Content/icons/delete.png" alt="Delete" title="Delete" /></a>
+                                    <a onclick="$(this).closest('tr').insertBefore($(this).closest('tr').prev());"><img src="/Content/icons/up.png" alt="Up" title="Up" /></a>
+                                    <a onclick="$(this).closest('tr').insertAfter($(this).closest('tr').next());"><img src="/Content/icons/down.png" alt="Down" title="Down" /></a>
+                                </td>
+                            </tr>*@
+                        </tbody>
+                    </table>
+                    <a href="javascript:addMasterDNSServers();">@Html.GetLocalizedString("Add")</a>
+                </fieldset>
+            </li>
+           
+           <li>
+           
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("ZoneFile")</legend>
+                    @Html.GetLocalizedString("ZoneFileHelp")
+                    <ul>
+                        <li><label>@(Html.RadioButton("ZoneFile", "New", true))@Html.GetLocalizedString("ZoneFileNew")</label><br />
+                            @*<input type="text" name="ZoneFileNameNew" />*@
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneFile", "Existing", false))@Html.GetLocalizedString("ZoneFileExisting") </label>
+                            <input type="text" name="ZoneFileNameExisting" />
+                       </li>
+                    </ul>
+                    @Html.GetLocalizedString("ZoneFileNote")
+                </fieldset>
+           </li>
+           
+           
+           
+           <li class="showprimary">
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("DynamicUpdate")</legend>
+                    @*SHOW FOR PRIMARY ONLY*@
+                    @Html.GetLocalizedString("DynamicUpdateHelp")
+                    <ul>
+                        <li><label>@(Html.RadioButton("ZoneAllowUpdateEnum", DNSManagement.Zone.ZoneAllowUpdateEnum.SecureOnlyUpdates, true))@Html.GetLocalizedString("DynamicUpdateSecureOnly")</label><br />
+                            @Html.GetLocalizedString("DynamicUpdateSecureOnlyHelp")
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneAllowUpdateEnum", DNSManagement.Zone.ZoneAllowUpdateEnum.SecureAndNonSecureUpdates, false))@Html.GetLocalizedString("DynamicUpdateSecureAndNonSecure")</label><br />
+                            @Html.GetLocalizedString("DynamicUpdateSecureAndNonSecureHelp")<br />
+                            <img src="/Content/icons/warning.png" width="16px" />@Html.GetLocalizedString("DynamicUpdateSecureAndNonSecureWarning")
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneAllowUpdateEnum", DNSManagement.Zone.ZoneAllowUpdateEnum.NoUpdates, false))@Html.GetLocalizedString("DynamicUpdatesNoUpdates")</label><br />
+                            @Html.GetLocalizedString("DynamicUpdatesNoUpdatesHelp")
+                       </li>
+                    </ul>
+                </fieldset>
+           </li>
+
+
+           @*<li class="">
+            <fieldset>
+                <legend>Advanced</legend>
+
+                <ul>
+                    <li>Scavange Servers</li>
+                    <li>Secure Secondaries allow zone transfer</li>
+                    <li>Use Wins</li>
+                    <li>Start Paused</li>
+                    <li>refresh interval</li>
+                    <li>no refresh interval</li>
+                    <li>aging</li>
+                    <li>Auto created</li>
+                    <li>AvailForScavengeTime</li>
+
+                </ul>
+            </fieldset>
+           </li>*@
+
+        </ul>
+
+        <div style="float:right;">
+            <a href="#" onclick="$('#newZone').hide('slow');">@Html.GetLocalizedString("Cancel")</a>
+            <input type="button" value="@Html.GetLocalizedString("Save")" onclick="zone_Save();" />
+        </div>
+    </fieldset>
+</div>
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>@Html.GetLocalizedString("Name")</th>
+            <th>@Html.GetLocalizedString("Type")</th>
+            <th>@Html.GetLocalizedString("Status")</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+@foreach (var z in zones)
+{
+    <tr>
+        <td><a href="#" onclick="zone_Load('@z.DnsServerName','@z.Name');">@z.Name</a></td>
+        <td>@z.ZoneType</td>
+        <td>@((z.Shutdown == true) ? "Expired " : "") @((z.Paused == true) ? Html.GetLocalizedString("Paused") : Html.GetLocalizedString("Running"))</td>
+        <td>
+            <a href="#" onclick="javascript:ZoneChange('@z.DnsServerName','@z.Name','pause');"><img src="../../Content/icons/pause.png" alt="@Html.GetLocalizedString("Pause")" title="@Html.GetLocalizedString("Pause")" /></a>
+            <a href="#" onclick="javascript:ZoneChange('@z.DnsServerName','@z.Name','resume');"><img src="../../Content/icons/play.png" alt="@Html.GetLocalizedString("Resume")" title="@Html.GetLocalizedString("Resume")" /></a>
+            <a href="#" onclick="javascript:zone_Delete('@z.DnsServerName','@z.Name');"><img src="../../Content/icons/delete.png" alt="@Html.GetLocalizedString("Delete")" title="@Html.GetLocalizedString("Delete")" /></a>
+        </td>
+    </tr>
+}
+
+    </tbody>
+</table>

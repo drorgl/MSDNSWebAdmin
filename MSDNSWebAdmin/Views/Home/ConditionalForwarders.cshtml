@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+    var zones = ViewData["zones"] as DNSManagement.Zone[];
+    string serverName = ViewData["serverName"] as string;
+}
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>@Html.GetLocalizedString("Name")</th>
+            <th>@Html.GetLocalizedString("Type")</th>
+            <th>@Html.GetLocalizedString("Status")</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+@foreach (var z in zones)
+{
+    <tr>
+        <td><a href="#" onclick="zone_Load('@z.DnsServerName','@z.Name');">@z.Name</a></td>
+        <td>@z.ZoneType</td>
+        <td>@((z.Shutdown == true) ? "Expired " : "") @((z.Paused == true) ? Html.GetLocalizedString("Paused") : Html.GetLocalizedString("Running"))</td>
+        <td>
+            <a href="#" onclick="javascript:ZoneChange('@z.DnsServerName','@z.Name','pause');"><img src="../../Content/icons/pause.png" alt="@Html.GetLocalizedString("Pause")" title="@Html.GetLocalizedString("Pause")" /></a>
+            <a href="#" onclick="javascript:ZoneChange('@z.DnsServerName','@z.Name','resume');"><img src="../../Content/icons/play.png" alt="@Html.GetLocalizedString("Resume")" title="@Html.GetLocalizedString("Resume")" /></a>
+            <a href="#" onclick="javascript:zone_Delete('@z.DnsServerName','@z.Name');"><img src="../../Content/icons/delete.png" alt="@Html.GetLocalizedString("Delete")" title="@Html.GetLocalizedString("Delete")" /></a>
+        </td>
+    </tr>
+}
+
+    </tbody>
+</table>

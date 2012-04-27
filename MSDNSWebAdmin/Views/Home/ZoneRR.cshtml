@@ -1,0 +1,156 @@
+﻿@model MSDNSWebAdmin.Models.ResourceRecordModel
+@using DNSManagement.RR
+
+<div class="divPanel" id="resourceRecord">
+    <fieldset>
+        <legend>@Model.OwnerName</legend>
+        <ul>
+           
+        
+        <li><label>Type: @Model.RecordTypeText - @Html.GetLocalizedString(@Model.ResourceRecordType + "Type")</label><br />
+            <div>
+                @Html.GetLocalizedString(@Model.ResourceRecordType + "Type" + "_Note")
+            </div>
+        </li>
+        <li>@Html.TextBoxForModel("zoneName",Model.ContainerName,true)</li>
+        <li>@Html.TextBoxForModel("recordName",Model.OwnerName,!Model.NewRecord)</li>
+        <li class="hidden"><label>Type: <input type="text" name="Type" readonly="readonly" value="@Model.ResourceRecordType" /></label></li>
+        <li><label>Server name: <input type="text" readonly="readonly" disabled="disabled" name="serverName" value="@Model.DnsServerName" /></label></li>
+        <li>@Html.DropDownListForModel("RecordClass", Model.RecordClass, !Model.NewRecord)</li>
+        <li><label>Timestamp: <input type="text" readonly="readonly" disabled="disabled"  value="@Model.TimeStamp.DateTime.ToString()" /></label></li>
+        <li class="hidden"><label>Text Representation: <input type="text" readonly="readonly" name="TextRepresentation" value="@Model.TextRepresentation" /></label></li>
+        <li>@Html.TextBoxForModel("TTL",Model.TTL)</li>
+        @switch (Model.ResourceRecordType)
+        {
+            case ResourceRecord.ResourceRecordEnum.AAAA:
+                <li>@Html.TextBoxForModel("AAAA_IPv6Address", Model.AAAA_IPv6Address)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.AFSDB:
+                <li>@Html.TextBoxForModel("AFSDB_ServerName", Model.AFSDB_ServerName)</li>
+                <li>@Html.DropDownListForModel("AFSDB_Subtype", Model.AFSDB_Subtype)</li>
+                break;
+           @* case ResourceRecord.ResourceRecordEnum.ATMA:
+                <li>@Html.TextBoxForModel("ATMA_ATMAddress", Model.ATMA_ATMAddress)</li>
+                <li>@Html.DropDownListForModel("ATMA_Format", Model.ATMA_Format) </li>
+                break;*@
+            case ResourceRecord.ResourceRecordEnum.A:
+                <li>@Html.TextBoxForModel("A_IPAddress", Model.A_IPAddress)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.CNAME:
+                <li>@Html.TextBoxForModel("CNAME_PrimaryName", Model.CNAME_PrimaryName)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.HINFO:
+                <li>@Html.TextBoxForModel("HINFO_CPU", Model.HINFO_CPU)</li>
+                <li>@Html.TextBoxForModel("HINFO_OS", Model.HINFO_OS)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.ISDN:
+                <li>@Html.TextBoxForModel("ISDN_ISDNNumber", Model.ISDN_ISDNNumber)</li>
+                <li>@Html.TextBoxForModel("ISDN_SubAddress", Model.ISDN_ISDNNumber)</li>
+                break;
+            @*case ResourceRecord.ResourceRecordEnum.KEY:
+                <li>@Html.DropDownListForModel("KEY_Algorithm", Model.KEY_Algorithm)</li>
+                <li>@Html.TextBoxForModel("KEY_Flags", Model.KEY_Algorithm.ToString())</li>
+                <li>@Html.DropDownListForModel("KEY_Protocol", Model.KEY_Algorithm)</li>
+                <li>@Html.DropDownListForModel("KEY_PublicKey", Model.KEY_Algorithm)</li>
+                break;*@
+            case ResourceRecord.ResourceRecordEnum.MB:
+                <li>@Html.TextBoxForModel("MB_MBHost", Model.MB_MBHost)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.MD:
+                <li>@Html.TextBoxForModel("MD_MDHost", Model.MD_MDHost)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.MF:
+                <li>@Html.TextBoxForModel("MF_MFHost", Model.MF_MFHost)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.MG:
+                <li>@Html.TextBoxForModel("MG_MGMailbox", Model.MG_MGMailbox)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.MINFO:
+                <li>@Html.TextBoxForModel("MINFO_ErrorMailbox", Model.MINFO_ErrorMailbox)</li>
+                <li>@Html.TextBoxForModel("MINFO_ResponsibleMailbox", Model.MINFO_ResponsibleMailbox)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.MR:
+                <li>@Html.TextBoxForModel("MR_MRMailbox", Model.MR_MRMailbox)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.MX:
+                <li>@Html.TextBoxForModel("MX_Preference", Model.MX_Preference.ToString())</li>
+                <li>@Html.TextBoxForModel("MX_MailExchange", Model.MX_MailExchange)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.NS:
+                <li>@Html.TextBoxForModel("NS_NSHost", Model.NS_NSHost)</li>
+                break;
+            @*case ResourceRecord.ResourceRecordEnum.NXT:
+                <li>@Html.TextBoxForModel("NXT_NextDomainName", Model.NXT_NextDomainName)</li>
+                <li>@Html.TextBoxForModel("NXT_Types", Model.NXT_Types)</li>
+                break;*@
+            case ResourceRecord.ResourceRecordEnum.PTR:
+                <li>@Html.TextBoxForModel("PTR_PTRDomainName", Model.PTR_PTRDomainName)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.RP:
+                <li>@Html.TextBoxForModel("RP_RPMailbox", Model.RP_RPMailbox)</li>
+                <li>@Html.TextBoxForModel("RP_TXTDomainName", Model.RP_TXTDomainName)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.RT:
+                <li>@Html.TextBoxForModel("RT_IntermediateHost", Model.RT_IntermediateHost)</li>
+                <li>@Html.TextBoxForModel("RT_Preference", Model.RT_Preference.ToString())</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.SIG:
+                <li>@Html.DropDownListForModel("SIG_Algorithm", Model.SIG_Algorithm)</li>
+                <li>@Html.TextBoxForModel("SIG_KeyTag", Model.SIG_KeyTag.ToString())</li>
+                <li>@Html.TextBoxForModel("SIG_Labels", Model.SIG_Labels.ToString())</li>
+                <li>@Html.TextBoxForModel("SIG_OriginalTTL", Model.SIG_OriginalTTL.ToString())</li>
+                <li>@Html.TextBoxForModel("SIG_Signature", Model.SIG_Signature)</li>
+                <li>@Html.TextBoxForModel("SIG_SignatureExpiration", Model.SIG_SignatureExpiration.ToString())</li>
+                <li>@Html.TextBoxForModel("SIG_SignatureInception", Model.SIG_SignatureInception.ToString())</li>
+                <li>@Html.TextBoxForModel("SIG_SignerName", Model.SIG_SignerName)</li>
+                <li>@Html.TextBoxForModel("SIG_TypeCovered", Model.SIG_TypeCovered.ToString())</li>
+                
+                break;
+            case ResourceRecord.ResourceRecordEnum.SOA:
+                <li>@Html.TextBoxForModel("SOA_ExpireLimit", Model.SOA_ExpireLimit)</li>
+                <li>@Html.TextBoxForModel("SOA_MinimumTTL", Model.SOA_MinimumTTL)</li>
+                <li>@Html.TextBoxForModel("SOA_PrimaryServer", Model.SOA_PrimaryServer)</li>
+                <li>@Html.TextBoxForModel("SOA_RefreshInterval", Model.SOA_RefreshInterval)</li>
+                <li>@Html.TextBoxForModel("SOA_ResponsibleParty", Model.SOA_ResponsibleParty)</li>
+                <li>@Html.TextBoxForModel("SOA_RetryDelay", Model.SOA_RetryDelay)</li>
+                <li>@Html.TextBoxForModel("SOA_SerialNumber", Model.SOA_SerialNumber.ToString())</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.SRV:
+                <li>@Html.TextBoxForModel("SRV_Priority", Model.SRV_Priority.ToString())</li>
+                <li>@Html.TextBoxForModel("SRV_Weight", Model.SRV_Weight.ToString())</li>
+                <li>@Html.TextBoxForModel("SRV_Port", Model.SRV_Port.ToString())</li>
+                <li>@Html.TextBoxForModel("SRV_SRVDomainName", Model.SRV_SRVDomainName)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.TXT:
+                <li>@Html.TextBoxForModel("TXT_DescriptiveText", Model.TXT_DescriptiveText)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.WINSR:
+                <li>@Html.TextBoxForModel("WINSR_CacheTimeout", Model.WINSR_CacheTimeout)</li>
+                <li>@Html.TextBoxForModel("WINSR_LookupTimeout", Model.WINSR_LookupTimeout)</li>
+                <li>@Html.DropDownListForModel("WINSR_MappingFlag", Model.WINSR_MappingFlag)</li>
+                <li>@Html.TextBoxForModel("WINSR_ResultDomain", Model.WINSR_ResultDomain)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.WINS:
+                <li>@Html.TextBoxForModel("WINS_CacheTimeout", Model.WINS_CacheTimeout)</li>
+                <li>@Html.TextBoxForModel("WINS_LookupTimeout", Model.WINS_LookupTimeout)</li>
+                <li>@Html.DropDownListForModel("WINS_MappingFlag", Model.WINS_MappingFlag)</li>
+                <li>@Html.TextBoxForModel("WINS_WinsServers", Model.WINS_WinsServers)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.WKS:
+                <li>@Html.TextBoxForModel("WKS_InternetAddress", Model.WKS_InternetAddress)</li>
+                <li>@Html.TextBoxForModel("WKS_IPProtocol", Model.WKS_IPProtocol)</li>
+                <li>@Html.TextBoxForModel("WKS_Services", Model.WKS_Services)</li>
+                break;
+            case ResourceRecord.ResourceRecordEnum.X25:
+                <li>@Html.TextBoxForModel("X25_PSDNAddress", Model.X25_PSDNAddress)</li>
+                break;
+        }
+
+        </ul>
+
+    </fieldset>
+</div>
+<div style="float:right;">
+    <a href="#" onclick="RefreshContent();">Cancel</a>
+    <input type="button" value="Save" onclick="resourceRecord_Save()" />
+</div>

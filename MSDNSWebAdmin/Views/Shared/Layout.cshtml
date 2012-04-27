@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="@Html.GetLocalizedString("MetaDescription")" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.splitter.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.jstree.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-impromptu.3.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/site.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/site.errorhandler.js")" type="text/javascript"></script>
+    @RenderSection("Head", false)
+</head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <h2>@Html.GetLocalizedString("Website_Name") &nbsp;<span class="ImportantMessages">@ViewData["ImportantMessages"]</span></h2>
+            </div>
+              
+            <div id="logindisplay">
+                @{Html.RenderPartial("LogOnUserControl");}
+                [ <a href="javascript:showMessageAjax('/Home/About','About')">@Html.GetLocalizedString("About")</a> ]
+            </div> 
+            
+        </div>
+
+        <div id="main">
+            @RenderBody()
+
+            <div id="footer">
+                Copyright (c) 2011, Dror Gluska <img src="../../Content/gplv3-88x31.png" height="16px" alt="GPLv3" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

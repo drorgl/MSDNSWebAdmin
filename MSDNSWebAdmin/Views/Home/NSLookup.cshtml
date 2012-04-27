@@ -1,0 +1,54 @@
+﻿@{
+    var server = ViewData["Server"] as string;
+}
+
+<div id="nslookupContainer">
+    <fieldset>
+        <legend>NSLookup</legend>
+
+        <ul>
+            <li><label>Server: @server <input type="hidden" name="serverName" value="@server" /></label></li>
+            <li>
+                <label>@(Html.RadioButton("Type","lookup",true)) Lookup</label>
+                <label>@(Html.RadioButton("Type","trace",false)) Trace (using root servers)</label>
+            </li>
+            <li>
+                <label>Records: 
+                @Html.DropDownListForModel("QueryType",Heijden.DNS.QType.ANY)
+                </label>
+            </li>
+            <li>
+                <label>Class:
+                @Html.DropDownListForModel("Class",Heijden.DNS.QClass.IN)
+                </label>
+            </li>
+            <li>
+                <label>Transport: 
+                @Html.DropDownListForModel("TransportType",Heijden.DNS.TransportType.Tcp)
+            </li>
+            <li><label>Query: <input type="text" name="Query" id="Query"/></label></li>
+            <li><a href="javascript:executeNSlookup();">Execute</a></li>
+            <li>
+                <textarea style="width:100%;height:200px;" id="nslookupResults"></textarea>
+            </li>
+        </ul>
+
+    </fieldset>
+</div>
+@*
+<div>
+    <fieldset>
+        <legend>Whois</legend>
+
+        <ul>
+            <li><label>Server: DNSSRV</label></li>
+            <li><label>Query: <input type="text" /></label></li>
+            <li><a href="">Execute</a></li>
+            <li>
+                <textarea></textarea>
+            </li>
+        </ul>
+
+    </fieldset>
+</div>
+*@

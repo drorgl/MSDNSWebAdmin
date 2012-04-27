@@ -1,0 +1,22 @@
+﻿@model DNSManagement.RR.ResourceRecord[]
+        
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rr in Model)
+        {
+            <tr>
+                <td><a href="#" onclick="resource_Load('@rr.DnsServerName','@rr.ContainerName','@HttpUtility.UrlEncode( rr.TextRepresentation)');"> @rr.OwnerName</a></td>
+                <td>@rr.RecordTypeText</td>
+                <td>@rr.TextRepresentation</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

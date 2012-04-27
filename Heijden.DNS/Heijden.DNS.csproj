@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C128873-CDBC-46F2-9A37-819E0C54F1B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Heijden.DNS</RootNamespace>
+    <AssemblyName>Heijden.DNS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dns\Dig.cs" />
+    <Compile Include="Dns\Header.cs" />
+    <Compile Include="Dns\Question.cs" />
+    <Compile Include="Dns\RecordReader.cs" />
+    <Compile Include="Dns\Records\NotUsed\RecordA6.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordAPL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordATMA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordCERT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordDHCID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordDNSKEY.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordEID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordGID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordHIP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordIPSECKEY.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordNIMLOC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordNSEC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordNSEC3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordNSEC3PARAM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordOPT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordRRSIG.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordSINK.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordSPF.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordSSHFP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordUID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordUINFO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordUnknown.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\NotUsed\RecordUNSPEC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\Obsolete\RecordGPOS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\Obsolete\RecordMD.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\Obsolete\RecordMF.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\Obsolete\RecordNSAPPTR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\Obsolete\RecordNXT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dns\Records\Record.cs" />
+    <Compile Include="Dns\Records\RecordA.cs" />
+    <Compile Include="Dns\Records\RecordAAAA.cs" />
+    <Compile Include="Dns\Records\RecordAFSDB.cs" />
+    <Compile Include="Dns\Records\RecordCNAME.cs" />
+    <Compile Include="Dns\Records\RecordDNAME.cs" />
+    <Compile Include="Dns\Records\RecordDS.cs" />
+    <Compile Include="Dns\Records\RecordHINFO.cs" />
+    <Compile Include="Dns\Records\RecordISDN.cs" />
+    <Compile Include="Dns\Records\RecordKEY.cs" />
+    <Compile Include="Dns\Records\RecordKX.cs" />
+    <Compile Include="Dns\Records\RecordLOC.cs" />
+    <Compile Include="Dns\Records\RecordMB.cs" />
+    <Compile Include="Dns\Records\RecordMG.cs" />
+    <Compile Include="Dns\Records\RecordMINFO.cs" />
+    <Compile Include="Dns\Records\RecordMR.cs" />
+    <Compile Include="Dns\Records\RecordMX.cs" />
+    <Compile Include="Dns\Records\RecordNAPTR.cs" />
+    <Compile Include="Dns\Records\RecordNS.cs" />
+    <Compile Include="Dns\Records\RecordNSAP.cs" />
+    <Compile Include="Dns\Records\RecordNULL.cs" />
+    <Compile Include="Dns\Records\RecordPTR.cs" />
+    <Compile Include="Dns\Records\RecordPX.cs" />
+    <Compile Include="Dns\Records\RecordRP.cs" />
+    <Compile Include="Dns\Records\RecordRT.cs" />
+    <Compile Include="Dns\Records\RecordSIG.cs" />
+    <Compile Include="Dns\Records\RecordSOA.cs" />
+    <Compile Include="Dns\Records\RecordSRV.cs" />
+    <Compile Include="Dns\Records\RecordTKEY.cs" />
+    <Compile Include="Dns\Records\RecordTSIG.cs" />
+    <Compile Include="Dns\Records\RecordTXT.cs" />
+    <Compile Include="Dns\Records\RecordWKS.cs" />
+    <Compile Include="Dns\Records\RecordX25.cs" />
+    <Compile Include="Dns\Request.cs" />
+    <Compile Include="Dns\Resolver.cs" />
+    <Compile Include="Dns\Response.cs" />
+    <Compile Include="Dns\RR.cs" />
+    <Compile Include="Dns\Structs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Doc\rfc1034.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Doc\rfc1035.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Doc\rfc1886.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+    <EmbeddedResource Include="Dns\Root\named_root.txt" />
+    <Content Include="Doc\rfc2782.txt" />
+    <Content Include="Doc\rfc2915.txt" />
+    <Content Include="LICENSE-CPOL.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

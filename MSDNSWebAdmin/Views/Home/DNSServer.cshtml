@@ -1,0 +1,287 @@
+﻿@model MSDNSWebAdmin.Models.DNSServerModel
+
+<h2>Server: @Model.ServerName</h2>
+
+<div class="divPanel">
+    <fieldset>
+        <legend>@Html.GetLocalizedString("Interfaces")</legend>
+    <div>
+        @Html.GetLocalizedString("Interfaces_Description")
+    </div>
+    <div>
+        <ul>
+            <li><label><input type="radio" name="ListenAddressesAll" disableElements='.serverIPItem' value="all"@((Model.ListenAddresses == null) ? "checked='checked'" : "")  /> All IP addresses</label></li>
+            <li><label><input type="radio" name="ListenAddressesAll" value="specific" enableElements='.serverIPItem' @((Model.ListenAddresses != null) ? "checked='checked'" : "") />Only the following IP Addresses:</label></li>
+        
+            @foreach (var addr in Model.ServerIPAddresses)
+            {
+                <li><label><input type="checkbox" class='serverIPItem' @(((Model.ListenAddresses == null) || (Model.ListenAddresses.Contains(addr))) ? "checked='checked'" : "") name="ListenAddresses" value="@addr" />@addr</label></li>
+            }
+        </ul>
+        </div>
+        <div>
+            @Html.GetLocalizedString("Interfaces_Notes")
+        </div>
+    </fieldset>
+</div>
+
+<div class="divPanel">
+    <fieldset>
+        <legend>@Html.GetLocalizedString("Forwarders")</legend>
+    <div>
+        @Html.GetLocalizedString("Forwarders_Description")
+    </div>
+    <table id="tblForwarders">
+        <thead>
+            <tr>
+                <th>@Html.GetLocalizedString("IPAddress")</th>
+                <th>@Html.GetLocalizedString("FQDN")</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rs in Model.Forwarders)
+            {
+                <tr>
+                    <td><input type="hidden" id="Forwarders" name="Forwarders" value="@rs.IPAddress" />@rs.IPAddress</td>
+                    <td>@rs.ServerName</td>
+                    <td><a onclick="$(this).closest('tr').remove();"><img src="/Content/icons/delete.png" title="@Html.GetLocalizedString("Delete")" alt="@Html.GetLocalizedString("Delete")" /></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="javascript:addForwarders();">@Html.GetLocalizedString("Add")</a><br />
+    @Html.CheckboxForModel("IsSlave",Model.IsSlave)
+    <div>
+        @Html.GetLocalizedString("Forwarders_Notes")
+    </div>
+    </fieldset>
+</div>
+
+
+<div class="divPanel">
+    <fieldset>
+        <legend>@Html.GetLocalizedString("Advanced")</legend>
+
+    @Html.DisplayLabelForModel("ServerVersion",Model.Version)
+
+    @Html.CheckboxForModel("NoRecursion",Model.NoRecursion)
+    @Html.CheckboxForModel("BindSecondaries", Model.BindSecondaries)
+    @Html.CheckboxForModel("StrictFileParsing", Model.StrictFileParsing)
+    @Html.CheckboxForModel("RoundRobin", Model.RoundRobin)
+    @Html.CheckboxForModel("LocalNetPriority", Model.LocalNetPriority)
+    @Html.CheckboxForModel("SecureResponses", Model.SecureResponses)
+
+    @Html.DropDownListForModel("NameCheckFlag",Model.NameCheckFlag)
+
+    @Html.DropDownListForModel("BootMethod",Model.BootMethod)
+
+
+    @*TODO: Implement fully*@
+    @*@Html.CheckboxForModel("AutomaticScavenging",(Model.ScavengingInterval > 0))*@
+    @*@Html.TextBoxForModel("ScavengingInterval",Model.ScavengingInterval.ToString())*@
+    @Html.GetLocalizedString("ScavengingInterval") <input type="text" value="@Model.ScavengingInterval" id="ScavengingInterval" name="ScavengingInterval" /> @Html.GetLocalizedString("Hours")
+    @*<select><option>Hours</option><option>Days</option></select>*@
+
+
+    </fieldset>
+</div>
+
+
+
+<div class="divPanel">
+    <fieldset>
+        <legend>@Html.GetLocalizedString("RootHints")</legend>
+    <div>
+        @Html.GetLocalizedString("RootHints_Description")
+    </div>
+
+    @Html.GetLocalizedString("Nameservers")
+
+    <table id="tblRootHints">
+        <thead>
+            <tr>
+                <th>@Html.GetLocalizedString("FQDN")</th>
+                <th>@Html.GetLocalizedString("IPAddress")</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rh in Model.RootHints)
+            {
+            <tr>
+                <td><input type="hidden" id="rootHintServer" name="rootHintServer" value="@(rh.ServerName)" />@(rh.ServerName)</td>
+                <td><input type="hidden" id="rootHintIPs" name="rootHintIPs" value="@rh.IPAddress" /> [@rh.IPAddress]</td>
+                <td>
+                   @* <a onclick="$(this).closest('tr').remove();"><img src="/Content/icons/delete.png" title="@Html.GetLocalizedString("Delete")" alt="@Html.GetLocalizedString("Delete")" /></a>
+                    <a onclick="addEditRootHints($(this).parents('tr'),'@rh.ServerName','@rh.IPAddress');"><img src="/Content/icons/edit.png" title="@Html.GetLocalizedString("Edit")" alt="@Html.GetLocalizedString("Edit")" /></a>*@
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    @*Root Hints implementation is incomplete and therefore disabled*@
+    @*<a href="javascript:addEditRootHints(null,'','');">@Html.GetLocalizedString("Add")</a>*@
+    @*<a href="">Edit</a>
+    <a href="">Remove</a>*@
+    @*<a href="">Copy from Server</a>*@
+    </fieldset>
+</div>
+
+<div class="divPanel">
+    <fieldset>
+        <legend>@Html.GetLocalizedString("DebugLogging")</legend>
+    <div>@Html.GetLocalizedString("Debug_Description")</div>
+
+    
+    <label><input type="checkbox" disabled="disabled" />Log packets for debugging</label><br />
+
+    
+    <div style="float:left;width:150px;">
+        <span>Packet direction</span><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.Send) != 0, new { value = DNSManagement.Server.LogLevelEnum.Send,disabled="disabled"} )) Outgoing</label><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.Receive) != 0, new { value = DNSManagement.Server.LogLevelEnum.Receive,disabled="disabled"} )) Incoming</label><br />
+    </div>
+    <div style="float:left;width:150px;">
+        <br />
+        select at <br />
+        least one
+    </div>
+    <div style="float:left;width:150px;">
+        Transport protocol:<br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.UDP) != 0, new { value = DNSManagement.Server.LogLevelEnum.UDP,disabled="disabled"} )) UDP</label><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.TCP) != 0, new { value = DNSManagement.Server.LogLevelEnum.TCP,disabled="disabled"} )) TCP</label><br />
+    </div>
+    <div style="float:left;width:150px;">
+        <br />
+        select at <br />
+        least one
+    </div>
+    <div style="clear:both;"></div>
+
+    <div style="float:left;width:150px;">
+        <span>Packet contents:</span><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.Query) != 0, new { value = DNSManagement.Server.LogLevelEnum.Query,disabled="disabled"} )) Queries/Transfers</label><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.Update) != 0, new { value = DNSManagement.Server.LogLevelEnum.Update,disabled="disabled"})) Updates</label><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.Notify) != 0, new { value = DNSManagement.Server.LogLevelEnum.Notify,disabled="disabled"} )) Notifications</label>
+    </div>
+    <div style="float:left;width:150px;">
+        <br />
+        select at <br />
+        least one
+    </div>
+    <div style="float:left;width:150px;">
+        <span>Packet type:</span><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.Questions) != 0, new { value = DNSManagement.Server.LogLevelEnum.Questions,disabled="disabled"} )) Request</label><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.Answers) != 0, new { value = DNSManagement.Server.LogLevelEnum.Answers,disabled="disabled"} )) Response</label>
+    </div>
+    <div style="float:left;width:150px;">
+        <br />
+        select at <br />
+        least one
+    </div>
+    <div style="clear:both;"></div>
+
+    <div>
+        <span>Other options:</span><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.Unmatched) != 0, new { value = DNSManagement.Server.LogLevelEnum.Unmatched,disabled="disabled"} )) Log unmatched incoming response packets</label><br />
+        <label>@( Html.CheckBox("LogLevel", (Model.LogLevel & DNSManagement.Server.LogLevelEnum.FullPackets) != 0, new { value = DNSManagement.Server.LogLevelEnum.FullPackets,disabled="disabled"} )) Details</label><br />
+        <label><input type="checkbox" disabled="disabled" @((Model.LogIPFilterList != null && Model.LogIPFilterList.Length > 0) ? "checked='checked'" : "") />Filter packets by IP address</label> 
+        @*<a href="">Filter...</a>*@
+        <input type="hidden" id="LogIPFilterList" name="LogIPFilterList" value="@Model.LogIPFilterList)" />
+        IPFilter: @((Model.LogIPFilterList != null) ? string.Join(", ", Model.LogIPFilterList) : "")
+    </div>
+
+    <fieldset>
+        <legend>Log file</legend>
+        <div style="float:left;width:150px;">File path and name:</div><div style="float:left;"><input type="text" id="LogFilePath" name="LogFilePath" value="@Model.LogFilePath" disabled="disabled" /></div><div style="clear:both;"></div>
+        <div style="float:left;width:150px;">Maximum size (bytes):</div><div style="float:left;"><input type="text" id="LogFileMaxSize" name="LogFileMaxSize" value="@Model.LogFileMaxSize" disabled="disabled" /></div><div style="clear:both;"></div>
+    </fieldset>
+
+    </fieldset>
+</div>
+
+
+<div class="divPanel">
+    <fieldset>
+        <legend>@Html.GetLocalizedString("EventLogging")</legend>
+
+    <div>@Html.GetLocalizedString("EventLogging_Description")</div>
+
+    Log the following events:<br />
+    <label>@(Html.RadioButton("EventLogLevel",DNSManagement.Server.EventLogLevelEnum.None,(Model.EventLogLevel == DNSManagement.Server.EventLogLevelEnum.None)))No evnets</label><br />
+    <label>@(Html.RadioButton("EventLogLevel", DNSManagement.Server.EventLogLevelEnum.ErrorsOnly, (Model.EventLogLevel == DNSManagement.Server.EventLogLevelEnum.ErrorsOnly)))Errors only</label><br />
+    <label>@(Html.RadioButton("EventLogLevel", DNSManagement.Server.EventLogLevelEnum.WarningsAndErrors, (Model.EventLogLevel == DNSManagement.Server.EventLogLevelEnum.WarningsAndErrors)))Errors and warnings</label><br />
+    <label>@(Html.RadioButton("EventLogLevel",DNSManagement.Server.EventLogLevelEnum.All,(Model.EventLogLevel == DNSManagement.Server.EventLogLevelEnum.All)))All events</label><br />
+    </fieldset>
+</div>
+@*
+TODO: (Can't find how to retrieve Trust Anchors via WMI)
+<div class="divPanel">
+    <fieldset>
+        <legend>Trust Anchors</legend>
+
+    <div>Trust Anchors are used to validate secure DNS (DNSSEC) responses from remote DNS servers. Configure Trust Anchors in the form of public keys in the DNSKEY format to validate signed DNS responses.</div>
+
+    Trust Anchors:
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Attributes</th>
+            </tr>
+        </thead>
+    </table>
+
+    <a href="">Add...</a>
+    <a href="">Edit...</a>
+    <a href="">Remove</a>
+    </fieldset>
+</div>*@
+@*
+TODO:
+<div class="divPanel">
+    <fieldset>
+        <legend>Monitoring</legend>
+
+    <div>To verify the configuration of the server, you can perform manual or automatic testing.</div>
+    
+    Select a test type:<br />
+
+    <label><input type="checkbox" />A simple query against this DNS server</label><br />
+
+    <label><input type="checkbox" />A recursive query to other DNS servers</label><br />
+
+    To perform the test immediately, click Test Now <a href="">Test Now</a> <br />
+
+    <label><input type="checkbox" />Perform automatic testing at the following interval:</label><br />
+    Test interval: <input type="text" /><select><option>Seconds</option><option>Minutes</option><option>Hours</option></select><br />
+
+    Test Results:<br />
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Simple Query</th>
+                <th>Recursive Query</th>
+            </tr>
+        </thead>
+    </table>
+    </fieldset>
+</div>
+*@
+
+<div class="divPanel">
+    <fieldset>
+        <legend>Backup/Restore</legend>
+        <a href="/Home/ServerBackup?serverName=@Model.ServerName">Backup all zones to zip</a><br />
+        <a href="javascript:void(0);" class="fileupload" url="/Home/ServerRestore?serverName=@Model.ServerName">Restore all zones from zip</a><br />
+        <a href="/Home/ClearCache?serverName=@Model.ServerName">Clear Cache</a><br />
+    </fieldset>
+</div>
+
+<div style="float:right;">
+    <a href="#" onclick="RefreshContent();">Cancel</a>
+    <input type="button" value="Save" onclick="saveContent('/Home/DNSServerSave?serverName=@Model.ServerName');" />
+</div>

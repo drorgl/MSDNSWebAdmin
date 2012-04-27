@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+@{
+
+    var start = Convert.ToInt32(ViewData["start"]);
+    var length = Convert.ToInt32(ViewData["length"]);
+
+    var entries = ViewData["entries"] as IList<DNSManagement.EventLogEntry>;
+}
+
+<h2>@Html.GetLocalizedString("Logs")</h2>
+
+@Html.GetLocalizedString("DisplayingEntries",start,length)<br />
+
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>@Html.GetLocalizedString("Type")</th>
+            <th>@Html.GetLocalizedString("Date")</th>
+            <th>@Html.GetLocalizedString("Time")</th>
+            <th>@Html.GetLocalizedString("Source")</th>
+            @*<th>@Html.GetLocalizedString("Category")</th>
+            <th>@Html.GetLocalizedString("Event")</th>*@
+            <th>@Html.GetLocalizedString("Message")</th>
+            <th>@Html.GetLocalizedString("User")</th>
+            <th>@Html.GetLocalizedString("Computer")</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+@foreach (var e in entries)
+  {
+       <tr title="@e.Message">
+           <td>
+                @switch (e.EventType)
+                  {
+                      case DNSManagement.EventLogEntry.EventTypeEnum.Error:
+                            <img src="../../Content/icons/error.png" width="16px" alt="Error" />
+                          break;
+                      case DNSManagement.EventLogEntry.EventTypeEnum.Information:
+                            <img src="../../Content/icons/information.png" width="16px" alt="Information" />
+                          break;
+                      case DNSManagement.EventLogEntry.EventTypeEnum.Warning:
+                            <img src="../../Content/icons/warning.png" width="16px" alt="Warning" />
+                          break;
+                      default:
+                            <text>&nbsp;</text>
+                          break;
+                  }
+           </td>
+           <td>@e.EventType.ToString()</td>
+           <td>@e.TimeGenerated.ToShortDateString()</td>
+           <td>@e.TimeGenerated.ToShortTimeString()</td>
+           <td>@e.SourceName</td>
+           @*<td>@e.Category</td>
+           <td>@e.EventIdentifier</td>*@
+           <td>@e.Message</td>
+           <td>@e.User</td>
+           <td>@e.ComputerName</td>
+       </tr>
+        
+  }
+
+  </tbody>
+</table>

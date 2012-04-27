@@ -1,0 +1,21 @@
+Install both 32-bit and 64-bit versions of Microsoft SQL Server Compact 3.5 Service Pack 2 on a 64-bit Computer
+---------------------------------------------------------------------------------------------------------------
+Microsoft SQL Server Compact 3.5 Service Pack 2 has separate Windows Installer (MSI) files for 32-bit (x86)
+and 64-bit (x64 or AMD64) Computers. It is mandatory to install both the 32-bit and the 64-bit version of 
+SQL Server Compact MSI files on a 64-bit Computer. Installing only the 32-bit version of the SQL Server 
+Compact 3.5 SP2 MSI file on a 64-bit computer will lead to failure of the existing SQL Server Compact 3.5 
+applications on the Computer. If you are developing an application that uses SQL Server Compact 3.5 SP2 
+than you should package both the 32-bit and the 64-bit version of the SQL Server Compact MSI files and 
+install both of them on a 64-bit Computer along with your application. 
+
+To ensure proper functionality of all the applications that are dependent on SQL Server Compact 3.5 SP2 on 
+the Computer install SQL Server Compact 3.5 SP2 as given below:
+
+Installing SQL Server Compact 3.5 SP2 on a 32-bit Computer (x86):
+1. Install the 32-bit version of SQL Server Compact 3.5 SP2 by running the SSCERuntime-ENU-x86.msi
+
+Installing SQL Server Compact 3.5 SP2 on a 64-bit computer (x64 or AMD64):
+1. Install the 32-bit version of SQL Server Compact 3.5 SP2 by running the SSCERuntime-ENU-x86.msi
+2. Than install the 64-bit version of SQL Server Compact 3.5 SP2 by running the SSCERuntime-ENU-x64.msi
+
+For more information visit http://support.microsoft.com/kb/974247.

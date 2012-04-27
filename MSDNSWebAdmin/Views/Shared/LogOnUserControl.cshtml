@@ -1,0 +1,14 @@
+﻿@if (Session["Username"] != null) 
+{
+    <text>
+        @Html.GetLocalizedString("Welcome") <b> @Session["Username"] </b>!
+        [ @Html.ActionLink(Html.GetLocalizedString("LogOff"), "LogOff", "Account") ]
+    </text>
+} 
+else 
+{
+    <text>
+        [ @Html.ActionLink(Html.GetLocalizedString("LogOn"), "LogOn", "Account") ]
+    </text>
+}
+

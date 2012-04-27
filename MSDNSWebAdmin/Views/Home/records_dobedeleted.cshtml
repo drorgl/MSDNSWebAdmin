@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "records";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2>records</h2>
+
+(left panel zone tree - Forward Lookup Zones/Reverse Lookup Zones/Conditional Forwarders/drill down tree/search)
+
+Records:
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp;(for checkbox)</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Data</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+</table>
+
+<a href="">Delete</a>
+<a href="">Add</a>
+
+Type:
+<select>
+    <option>A or AAAA</option>
+    <option>CNAME</option>
+    <option>MX</option>
+    <option>AFSDB</option>
+    <option>ATMA</option>
+    <option>DHCID</option>
+    <option>DNAME</option>
+    <option>HINFO</option>
+    <option>ISDN</option>
+    <option>MG</option>
+    <option>MB</option>
+    <option>MINFO</option>
+    <option>...</option>
+   
+</select>
+<br />
+
+Host or Child domain:<br />
+<input type="text" />
+<br />
+
+Fully qualified domain name (FQDN): <br />
+<input type="text" />
+<br />
+
+(custom fields)
+
+

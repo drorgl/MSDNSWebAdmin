@@ -1,0 +1,207 @@
+﻿@{
+    Layout = null;
+    var zones = ViewData["zones"] as DNSManagement.Zone[];
+}
+
+
+<a href="#" onclick="$('#newZone').show('slow');">@Html.GetLocalizedString("NewZone")...</a>
+<div class="divPanel" id="newZone" xstyle="display:none;">
+
+
+
+    <fieldset>
+        <legend>@Html.GetLocalizedString("NewZone")</legend>
+        <ul>
+              <li>
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("ZoneType")</legend>
+                    @Html.GetLocalizedString("ZoneTypeHelp")
+                    <ul>
+                        <li><label>@(Html.RadioButton("ZoneTypeCreate", DNSManagement.Zone.ZoneTypeCreate.Primary, true, new { onclick = "zoneTypeChange();" }))@Html.GetLocalizedString("PrimaryZone")<br />
+                            @Html.GetLocalizedString("PrimaryZoneHelp")</label>
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneTypeCreate", DNSManagement.Zone.ZoneTypeCreate.Secondary, false, new { onclick = "zoneTypeChange();" }))@Html.GetLocalizedString("SecondaryZone")<br />
+                            @Html.GetLocalizedString("SecondaryZoneHelp")</label>
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneTypeCreate", DNSManagement.Zone.ZoneTypeCreate.Stub, false, new { onclick = "zoneTypeChange();" }))@Html.GetLocalizedString("StabZone")<br />
+                            @Html.GetLocalizedString("StabZoneHelp")</label>
+                       </li>
+                       @Html.CheckboxForModel("StoreZoneInAD", false)
+                    </ul>
+                </fieldset>
+            </li>
+
+            <li>
+            
+                <fieldset>
+                    <legend>Reverse Lookup Zone</legend>
+               
+                    Choose whether you want to create a reverse lookup zone for IPv4 addresses or IPv6 addresses.
+                    <ul>
+                
+                        <li><label>@(Html.RadioButton("IPv", "4",true, new{onclick="zoneVersionChange();"})) IPv4 Reverse Lookup Zone </label></li>
+                        <li><label>@(Html.RadioButton("IPv", "6",false, new{onclick="zoneVersionChange();"})) IPv6 Reverse Lookup Zone </label></li>
+
+                    </ul>
+                 </fieldset>
+
+            </li>
+
+            <li class="showipv4">
+                <fieldset>
+                    <legend>Network ID</legend>
+                    @*DISPLAY ON IPV4 ONLY*@
+                    To Identify the reverse lookup zone, type the network ID or the name of the zone.
+                    <ul>
+                    <li><label> @(Html.RadioButton("IPv4Network","ID",true, new {onclick="ipv4NetworkChange();"}))Network ID:</label>
+                        <br />
+                        <input type="text" id="ipv4networkID" name="ipv4networkID" /> e.g. 192.168.0<br />
+
+                        The network ID is the portion of the IP addresses that belongs to this zone. Enter the network ID in its normal (not reversed) order.
+                        <br />
+
+                        If you use a zero in the network ID, it will appear in the zone name. For example, network ID 10 would create zone 10.in-addr.arpa, and network ID 10.0 would create zone 0.10.in-addr.arpa.
+                    </li>
+                    <li>
+                        <label>@(Html.RadioButton("IPv4Network", "Name", false, new { onclick = "ipv4NetworkChange();" }))Reverse lookup zone name:</label>
+                        <br />
+                        <input type="text" id="ipv4networkName" name="ipv4networkName" />
+                    </li>
+                    </ul>
+                </fieldset>
+            </li>
+
+            <li class="showipv6" style="display:none;">
+                <fieldset>
+                    <legend>Network ID</legend>
+                    @*DISPLAY ON IPV6 ONLY*@
+                    To name the reverse lookup zone, enter an IPv6 address prefix to auto generate the zone name(s). Depending on the prefix you enter, up to 8 zones may be created.
+
+                    <br />eg. ff::/32
+                    <div>
+                    IPv6 Address Prefix:<br />
+                    <input type="text" id="ipv6AddressPrefix" /><br />
+                    Reverse Lookup Zones<br />
+                    <div>
+                       <INPUT NAME="options" TYPE="CHECKBOX" VALUE="o1">
+                          Option 1<br />
+                        <INPUT NAME="options" TYPE="CHECKBOX" VALUE="o2">
+                          Option 2<br />
+                        <INPUT NAME="options" TYPE="CHECKBOX" VALUE="o3">
+                          Option 3<br />
+                        <INPUT NAME="options" TYPE="CHECKBOX" VALUE="o4">
+                          Option 4<br />
+                        <INPUT NAME="options" TYPE="CHECKBOX" VALUE="o5">
+                          Option 5<br />
+                        <INPUT NAME="options" TYPE="CHECKBOX" VALUE="o6">
+                          Option 6<br />
+                      </div>
+                    </div>
+                </fieldset>
+            </li>
+
+            <li class="showsecondary showstub" style="display:none;">
+            
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("MasterDNSServers")</legend>
+                    @*SHOW FOR SECONDARY/STUB*@
+
+                    @Html.GetLocalizedString("MasterDNSServersHelp")
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>@Html.GetLocalizedString("IPAddress")</th>
+                                <th>@Html.GetLocalizedString("FQDN")</th>
+                                <th>@Html.GetLocalizedString("Validated")</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11.1.1.1</td>
+                                <td>bla.com</td>
+                                <td>Validating...</td>
+                                <td>X Up Down</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </fieldset>
+            </li>
+           
+           <li>
+           
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("ZoneFile")</legend>
+                    @Html.GetLocalizedString("ZoneFileHelp")
+                    <ul>
+                        <li><label>@(Html.RadioButton("ZoneFile", "New", true))@Html.GetLocalizedString("ZoneFileNew")</label><br />
+                            <input type="text" />
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneFile", "Existing", false))@Html.GetLocalizedString("ZoneFileExisting") </label>
+                            <input type="text" />
+                       </li>
+                    </ul>
+                    @Html.GetLocalizedString("ZoneFileNote")
+                </fieldset>
+           </li>
+           
+           
+           
+           <li class="showprimary">
+                <fieldset>
+                    <legend>@Html.GetLocalizedString("DynamicUpdate")</legend>
+                    @*SHOW FOR PRIMARY ONLY*@
+                    @Html.GetLocalizedString("DynamicUpdateHelp")
+                    <ul>
+                        <li><label>@(Html.RadioButton("ZoneAllowUpdateEnum", DNSManagement.Zone.ZoneAllowUpdateEnum.SecureOnlyUpdates, true))@Html.GetLocalizedString("DynamicUpdateSecureOnly")</label><br />
+                            @Html.GetLocalizedString("DynamicUpdateSecureOnlyHelp")
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneAllowUpdateEnum", DNSManagement.Zone.ZoneAllowUpdateEnum.SecureAndNonSecureUpdates, false))@Html.GetLocalizedString("DynamicUpdateSecureAndNonSecure")</label><br />
+                            @Html.GetLocalizedString("DynamicUpdateSecureAndNonSecureHelp")<br />
+                            <img src="/Content/icons/warning.png" />@Html.GetLocalizedString("DynamicUpdateSecureAndNonSecureWarning")
+                       </li>
+                       <li><label>@(Html.RadioButton("ZoneAllowUpdateEnum", DNSManagement.Zone.ZoneAllowUpdateEnum.NoUpdates, false))@Html.GetLocalizedString("DynamicUpdatesNoUpdates")</label><br />
+                            @Html.GetLocalizedString("DynamicUpdatesNoUpdatesHelp")
+                       </li>
+                    </ul>
+                </fieldset>
+           </li>
+
+
+        </ul>
+
+        <div style="float:right;">
+            <a href="#" onclick="">@Html.GetLocalizedString("Cancel")</a>
+            <input type="button" value="@Html.GetLocalizedString("Save")" onclick="" />
+        </div>
+    </fieldset>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>@Html.GetLocalizedString("Name")</th>
+            <th>@Html.GetLocalizedString("Type")</th>
+            <th>@Html.GetLocalizedString("Status")</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+@foreach (var z in zones)
+{
+    <tr>
+        <td>@z.Name</td>
+        <td>@z.ZoneType</td>
+        <td>@((z.Shutdown == true) ? "Expired " : "") @((z.Paused == true) ? Html.GetLocalizedString("Paused") : Html.GetLocalizedString("Running"))</td>
+        <td>
+            <a href="javascript:ZoneChange('@z.DnsServerName','@z.Name','pause');">@Html.GetLocalizedString("Pause")</a>
+            <a href="javascript:ZoneChange('@z.DnsServerName','@z.Name','resume');">@Html.GetLocalizedString("Resume")</a>
+        </td>
+    </tr>
+}
+
+    </tbody>
+</table>

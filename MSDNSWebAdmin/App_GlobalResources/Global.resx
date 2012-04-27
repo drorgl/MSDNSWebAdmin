@@ -1,0 +1,1074 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="AutomaticScavenging" xml:space="preserve">
+    <value>Enable automatic scavenging of stale records</value>
+  </data>
+  <data name="BindSecondaries" xml:space="preserve">
+    <value>BIND secondaries</value>
+  </data>
+  <data name="BootMethod" xml:space="preserve">
+    <value>Load zone data on startup:</value>
+  </data>
+  <data name="BootMethodEnum_DirectoryAndRegisty" xml:space="preserve">
+    <value>from Active Directory and registry</value>
+  </data>
+  <data name="BootMethodEnum_File" xml:space="preserve">
+    <value>From file</value>
+  </data>
+  <data name="BootMethodEnum_Registry" xml:space="preserve">
+    <value>From registry</value>
+  </data>
+  <data name="BootMethodEnum_Uninitialized" xml:space="preserve">
+    <value>Uninitialized</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Forwarders" xml:space="preserve">
+    <value>Forwarders</value>
+  </data>
+  <data name="Forwarders_Description" xml:space="preserve">
+    <value>Forwaredrs are DNS servers that this server can use to resolve DNS queries for records that this server cannot resolve.</value>
+  </data>
+  <data name="Forwarders_Notes" xml:space="preserve">
+    <value>Note: If conditional forwarders are defined for a given domain, they will be used instead of server-level forwarders. To create or view conditional forwarders, navigate to the Conditional Forwarders node in the scope tree.</value>
+  </data>
+  <data name="FQDN" xml:space="preserve">
+    <value>FQDN</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="Interfaces" xml:space="preserve">
+    <value>Interfaces</value>
+  </data>
+  <data name="Interfaces_Description" xml:space="preserve">
+    <value>Select the IP addresses that will serve DNS requests. The server can listen for DNS queries on all IP addresses defined for this computer, or you can limit it to selected IP addresses.</value>
+  </data>
+  <data name="Interfaces_Notes" xml:space="preserve">
+    <value>Windows 2008 pre-sp2 doesn't support DNS binding to IPv6, if you change this setting, make sure you remove the IPv6 Addresses, otherwise an error will occur.</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="IsSlave" xml:space="preserve">
+    <value>Use root hints if no forwarders are available</value>
+  </data>
+  <data name="LocalNetPriority" xml:space="preserve">
+    <value>Enable netmask ordering</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Log On</value>
+  </data>
+  <data name="NameCheckFlag" xml:space="preserve">
+    <value>Name Checking:</value>
+  </data>
+  <data name="NameCheckFlagEnum_AllNames" xml:space="preserve">
+    <value>All names</value>
+  </data>
+  <data name="NameCheckFlagEnum_MultibyteUTF8" xml:space="preserve">
+    <value>Multibyte (UTF8)</value>
+  </data>
+  <data name="NameCheckFlagEnum_NonRFCANSI" xml:space="preserve">
+    <value>Non RFC (ANSI)</value>
+  </data>
+  <data name="NameCheckFlagEnum_StrictRFCANSI" xml:space="preserve">
+    <value>Strict RFC (ANSI)</value>
+  </data>
+  <data name="Nameservers" xml:space="preserve">
+    <value>Name servers:</value>
+  </data>
+  <data name="NoRecursion" xml:space="preserve">
+    <value>Disable recursion (also disables forwarders)</value>
+  </data>
+  <data name="RootHints" xml:space="preserve">
+    <value>Root Hints</value>
+  </data>
+  <data name="RootHints_Description" xml:space="preserve">
+    <value>Root hints resolve queries for zones that do not exist on the local DNS server. They are only used if forwarders are not configured or fail to respond.</value>
+  </data>
+  <data name="RoundRobin" xml:space="preserve">
+    <value>Enable round robin</value>
+  </data>
+  <data name="ScavengingInterval" xml:space="preserve">
+    <value>Scavenging Period:</value>
+  </data>
+  <data name="SecureResponses" xml:space="preserve">
+    <value>Secure cache against pollution</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>Servers</value>
+  </data>
+  <data name="ServerVersion" xml:space="preserve">
+    <value>Server version number:</value>
+  </data>
+  <data name="StrictFileParsing" xml:space="preserve">
+    <value>Fail on load if bad zone data</value>
+  </data>
+  <data name="Website_Name" xml:space="preserve">
+    <value>DNS Web Management</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="DebugLogging" xml:space="preserve">
+    <value>Debug Logging</value>
+  </data>
+  <data name="Debug_Description" xml:space="preserve">
+    <value>To assist with debugging, you can record the packets sent and received by the DNS server to a log file. Debug logging is disabled by default.</value>
+  </data>
+  <data name="EventLogging" xml:space="preserve">
+    <value>Event Logging</value>
+  </data>
+  <data name="EventLogging_Description" xml:space="preserve">
+    <value>The DNS event log maintains a record of errors, warnings, and other events encountered by the DNS server. You can use this information to analyze server performance.</value>
+  </data>
+  <data name="BackupRestore" xml:space="preserve">
+    <value>Backup/Restore</value>
+  </data>
+  <data name="StoreZoneInAD" xml:space="preserve">
+    <value>Store the zone in Active Directory (available only if DNS server is a writeable domain controller)</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="DynamicUpdate" xml:space="preserve">
+    <value>Dynamic Update</value>
+  </data>
+  <data name="DynamicUpdateHelp" xml:space="preserve">
+    <value>Dynamic updates enable DNS client computers to register and dynamically update their resource records with a DNS server whenever changes occur.</value>
+  </data>
+  <data name="DynamicUpdateSecureAndNonSecure" xml:space="preserve">
+    <value>Allow both nonsecure and secure dynamic updates</value>
+  </data>
+  <data name="DynamicUpdateSecureAndNonSecureHelp" xml:space="preserve">
+    <value>Dynamic updates of resource records are accepted from any client.</value>
+  </data>
+  <data name="DynamicUpdateSecureAndNonSecureWarning" xml:space="preserve">
+    <value>This option is a significant security vulnerability because updates can be accepted from untrusted sources.</value>
+  </data>
+  <data name="DynamicUpdateSecureOnly" xml:space="preserve">
+    <value>Allow only secure dynamic updates (recommended for Active Directory)</value>
+  </data>
+  <data name="DynamicUpdateSecureOnlyHelp" xml:space="preserve">
+    <value>This option is available only for Active Directory-integrated zones.</value>
+  </data>
+  <data name="DynamicUpdatesNoUpdates" xml:space="preserve">
+    <value>Do not allow dynamic updates</value>
+  </data>
+  <data name="DynamicUpdatesNoUpdatesHelp" xml:space="preserve">
+    <value>Dynamic updates of resource records are not accepted by this zone. You must update these records manually.</value>
+  </data>
+  <data name="MasterDNSServers" xml:space="preserve">
+    <value>Master DNS Servers</value>
+  </data>
+  <data name="MasterDNSServersHelp" xml:space="preserve">
+    <value>Specify the DNS servers from which you want to copy the zone. Servers are contacted in the order shown.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NewZone" xml:space="preserve">
+    <value>New Zone</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Paused" xml:space="preserve">
+    <value>Paused</value>
+  </data>
+  <data name="PrimaryZone" xml:space="preserve">
+    <value>Primary zone</value>
+  </data>
+  <data name="PrimaryZoneHelp" xml:space="preserve">
+    <value>Creates a copy of a zone that can be updated directly on this server.</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Resume</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SecondaryZone" xml:space="preserve">
+    <value>Secondary</value>
+  </data>
+  <data name="SecondaryZoneHelp" xml:space="preserve">
+    <value>Creates a copy of a zone of that exists on another server. This option helps balance the processing load of primary servers and provides fault tolerance.</value>
+  </data>
+  <data name="StabZone" xml:space="preserve">
+    <value>Stub zone</value>
+  </data>
+  <data name="StabZoneHelp" xml:space="preserve">
+    <value>Creates a copy of a zone containing only Name Server (NS), Start of Authority (SOA), and possibly glue Host (A) records. A server containing a stub zone is not authoritative for that zone.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Validated" xml:space="preserve">
+    <value>Validated</value>
+  </data>
+  <data name="ZoneFile" xml:space="preserve">
+    <value>Zone File</value>
+  </data>
+  <data name="ZoneFileExisting" xml:space="preserve">
+    <value>Use this existing file:</value>
+  </data>
+  <data name="ZoneFileHelp" xml:space="preserve">
+    <value>Do you want to create a new zone file or use an existing file that you have copied from another DNS server?</value>
+  </data>
+  <data name="ZoneFileNew" xml:space="preserve">
+    <value>Create a new file with this file name:</value>
+  </data>
+  <data name="ZoneFileNote" xml:space="preserve">
+    <value>To use this existing file, ensure that it has been copied to the folder %SystemRoot%\system32\dns on this server, and then click Next.</value>
+  </data>
+  <data name="ZoneName" xml:space="preserve">
+    <value>Zone Name</value>
+  </data>
+  <data name="ZoneNameHelp" xml:space="preserve">
+    <value>The zone name specifies the portion of the DNS namespace for which this server is authoritative. It might be your organization's domain name (for example, microsoft.com) or a portion of the domain name (for example, newzone.microsoft.com). The zone name is not the name of the DNS server.</value>
+  </data>
+  <data name="ZoneType" xml:space="preserve">
+    <value>Zone Type</value>
+  </data>
+  <data name="ZoneTypeHelp" xml:space="preserve">
+    <value>Select the type of zone you want to create:</value>
+  </data>
+  <data name="QType_A" xml:space="preserve">
+    <value>A - a IPV4 host address</value>
+  </data>
+  <data name="QType_CNAME" xml:space="preserve">
+    <value>CNAME - the canonical name for an alias</value>
+  </data>
+  <data name="QType_HINFO" xml:space="preserve">
+    <value>HINFO - host information</value>
+  </data>
+  <data name="QType_MB" xml:space="preserve">
+    <value>MB - a mailbox domain name (EXPERIMENTAL)</value>
+  </data>
+  <data name="QType_MD" xml:space="preserve">
+    <value>MD - a mail destination (Obsolete - use MX)</value>
+  </data>
+  <data name="QType_MF" xml:space="preserve">
+    <value>MF - a mail forwarder (Obsolete - use MX)</value>
+  </data>
+  <data name="QType_MG" xml:space="preserve">
+    <value>MG - a mail group member (EXPERIMENTAL)</value>
+  </data>
+  <data name="QType_MINFO" xml:space="preserve">
+    <value>MINFO - mailbox or mail list information</value>
+  </data>
+  <data name="QType_MR" xml:space="preserve">
+    <value>MR - a mail rename domain name (EXPERIMENTAL)</value>
+  </data>
+  <data name="QType_MX" xml:space="preserve">
+    <value>MX - mail exchange</value>
+  </data>
+  <data name="QType_NS" xml:space="preserve">
+    <value>NS - an authoritative name server</value>
+  </data>
+  <data name="QType_NULL" xml:space="preserve">
+    <value>NULL - a null RR (EXPERIMENTAL)</value>
+  </data>
+  <data name="QType_PTR" xml:space="preserve">
+    <value>PTR - a domain name pointer</value>
+  </data>
+  <data name="QType_SOA" xml:space="preserve">
+    <value>SOA - marks the start of a zone of authority</value>
+  </data>
+  <data name="QType_TXT" xml:space="preserve">
+    <value>TXT - text strings</value>
+  </data>
+  <data name="QType_WKS" xml:space="preserve">
+    <value>WKS - a well known service description</value>
+  </data>
+  <data name="QueryType" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="Computer" xml:space="preserve">
+    <value>Computer</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DisplayingEntries" xml:space="preserve">
+    <value>Displaying Entries {0} - {1}</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="QClass_ANY" xml:space="preserve">
+    <value>ANY - any class</value>
+  </data>
+  <data name="QClass_CH" xml:space="preserve">
+    <value>CH - the CHAOS class</value>
+  </data>
+  <data name="QClass_CS" xml:space="preserve">
+    <value>CS - the CSNET class (Obsolete - used only for examples in some obsolete RFCs)</value>
+  </data>
+  <data name="QClass_HS" xml:space="preserve">
+    <value>HS - Hesiod [Dyer 87]</value>
+  </data>
+  <data name="QClass_IN" xml:space="preserve">
+    <value>IN - the Internet</value>
+  </data>
+  <data name="QType_A6" xml:space="preserve">
+    <value>A6 - IPv6 address rfc3363</value>
+  </data>
+  <data name="QType_AAAA" xml:space="preserve">
+    <value>AAAA - a IPV6 host address</value>
+  </data>
+  <data name="QType_AFSDB" xml:space="preserve">
+    <value>AFSDB - AFS Data Base location</value>
+  </data>
+  <data name="QType_ANY" xml:space="preserve">
+    <value>ANY - A request for all records             [RFC1035]</value>
+  </data>
+  <data name="QType_APL" xml:space="preserve">
+    <value>APL - *** APL [RFC3123]</value>
+  </data>
+  <data name="QType_ATMA" xml:space="preserve">
+    <value>ATMA - *** ATM Address (Dobrowski)</value>
+  </data>
+  <data name="QType_AXFR" xml:space="preserve">
+    <value>AXFR - transfer of an entire zone [RFC1035]</value>
+  </data>
+  <data name="QType_CERT" xml:space="preserve">
+    <value>CERT - *** CERT RFC2538</value>
+  </data>
+  <data name="QType_DHCID" xml:space="preserve">
+    <value>DHCID - rfc4701</value>
+  </data>
+  <data name="QType_DLV" xml:space="preserve">
+    <value>DLV - DNSSEC Lookaside Validation [RFC4431]</value>
+  </data>
+  <data name="QType_DNAME" xml:space="preserve">
+    <value>DNAME - A way to provide aliases for a whole domain, not just a single domain name as with CNAME. rfc2672</value>
+  </data>
+  <data name="QType_DNSKEY" xml:space="preserve">
+    <value>DNSKEY - *** DNSKEY RFC-ietf-dnsext-dnssec-2535</value>
+  </data>
+  <data name="QType_DS" xml:space="preserve">
+    <value>DS - Delegation Signer rfc3658</value>
+  </data>
+  <data name="QType_EID" xml:space="preserve">
+    <value>EID - *** Endpoint Identifier (Patton)</value>
+  </data>
+  <data name="QType_GID" xml:space="preserve">
+    <value>GID - *** IANA-Reserved</value>
+  </data>
+  <data name="QType_GPOS" xml:space="preserve">
+    <value>GPOS - Geographical position rfc1712 (obsolete)</value>
+  </data>
+  <data name="QType_HIP" xml:space="preserve">
+    <value>HIP - RFC-ietf-hip-dns-09.txt</value>
+  </data>
+  <data name="QType_IPSECKEY" xml:space="preserve">
+    <value>IPSECKEY - rfc4025</value>
+  </data>
+  <data name="QType_ISDN" xml:space="preserve">
+    <value>ISDN - ISDN address rfc1183</value>
+  </data>
+  <data name="QType_IXFR" xml:space="preserve">
+    <value>IXFR - incremental transfer [RFC1995]</value>
+  </data>
+  <data name="QType_KEY" xml:space="preserve">
+    <value>KEY - Public key as used in DNSSEC rfc2535</value>
+  </data>
+  <data name="QType_KX" xml:space="preserve">
+    <value>KX - Key Exchange Delegation Record rfc2230</value>
+  </data>
+  <data name="QType_LOC" xml:space="preserve">
+    <value>LOC - Location information rfc1876</value>
+  </data>
+  <data name="QType_MAILA" xml:space="preserve">
+    <value>MAILA - mail agent RRs (Obsolete - see MX)    [RFC1035]</value>
+  </data>
+  <data name="QType_MAILB" xml:space="preserve">
+    <value>MAILB - mailbox-related RRs (MB, MG or MR)    [RFC1035]</value>
+  </data>
+  <data name="QType_NAPTR" xml:space="preserve">
+    <value>NAPTR - The Naming Authority Pointer rfc3403</value>
+  </data>
+  <data name="QType_NIMLOC" xml:space="preserve">
+    <value>NIMLOC - *** Nimrod Locator (Patton)</value>
+  </data>
+  <data name="QType_NSAP" xml:space="preserve">
+    <value>NSAP - Network service access point address rfc1706</value>
+  </data>
+  <data name="QType_NSAP_PTR" xml:space="preserve">
+    <value>NSAP_PTR - Obsolete, rfc1348</value>
+  </data>
+  <data name="QType_NSEC" xml:space="preserve">
+    <value>NSEC - *** NSEC RFC-ietf-dnsext-dnssec-2535</value>
+  </data>
+  <data name="QType_NSEC3" xml:space="preserve">
+    <value>NSEC3 - RFC5155</value>
+  </data>
+  <data name="QType_NSEC3PARAM" xml:space="preserve">
+    <value>NSEC3PARAM - RFC5155</value>
+  </data>
+  <data name="QType_NXT" xml:space="preserve">
+    <value>NXT - Obsolete rfc2065 / rfc2535</value>
+  </data>
+  <data name="QType_OPT" xml:space="preserve">
+    <value>OPT - *** OPT RFC2671</value>
+  </data>
+  <data name="QType_PX" xml:space="preserve">
+    <value>PX - Pointer to X.400/RFC822 mail mapping information rfc2163</value>
+  </data>
+  <data name="QType_RP" xml:space="preserve">
+    <value>RP - The Responsible Person rfc1183</value>
+  </data>
+  <data name="QType_RRSIG" xml:space="preserve">
+    <value>RRSIG - *** RRSIG RFC-ietf-dnsext-dnssec-2535</value>
+  </data>
+  <data name="QType_RT" xml:space="preserve">
+    <value>RT - The Route Through rfc1183</value>
+  </data>
+  <data name="QType_SIG" xml:space="preserve">
+    <value>SIG - Cryptographic public key signature rfc2931 / rfc2535</value>
+  </data>
+  <data name="QType_SINK" xml:space="preserve">
+    <value>SINK - *** SINK Eastlake</value>
+  </data>
+  <data name="QType_SPF" xml:space="preserve">
+    <value>SPF - RFC4408</value>
+  </data>
+  <data name="QType_SRV" xml:space="preserve">
+    <value>SRV - Location of services rfc2782</value>
+  </data>
+  <data name="QType_SSHFP" xml:space="preserve">
+    <value>SSHFP - *** SSH Key Fingerprint RFC-ietf-secsh-dns</value>
+  </data>
+  <data name="QType_TA" xml:space="preserve">
+    <value>TA - DNSSEC Trust Authorities    [Weiler]  13 December 2005</value>
+  </data>
+  <data name="QType_TKEY" xml:space="preserve">
+    <value>TKEY - Transaction key rfc2930</value>
+  </data>
+  <data name="QType_TSIG" xml:space="preserve">
+    <value>TSIG - Transaction signature rfc2845</value>
+  </data>
+  <data name="QType_UID" xml:space="preserve">
+    <value>UID - *** IANA-Reserved</value>
+  </data>
+  <data name="QType_UINFO" xml:space="preserve">
+    <value>UINFO - *** IANA-Reserved</value>
+  </data>
+  <data name="QType_UNSPEC" xml:space="preserve">
+    <value>UNSPEC - *** IANA-Reserved</value>
+  </data>
+  <data name="QType_X25" xml:space="preserve">
+    <value>X25 - X.25 address rfc1183</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="TransportType" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="TransportType_Tcp" xml:space="preserve">
+    <value>TCP</value>
+  </data>
+  <data name="TransportType_Udp" xml:space="preserve">
+    <value>UDP</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="OptionalAdminEmail" xml:space="preserve">
+    <value>Optional: Admin Email</value>
+  </data>
+  <data name="AAAAType" xml:space="preserve">
+    <value>IPv6 Address (AAAA)</value>
+  </data>
+  <data name="AAAAType_Note" xml:space="preserve">
+    <value>Returns a 128-bit IPv6 address, most commonly used to map hostnames to an IP address of the host.</value>
+  </data>
+  <data name="AddressFormatEnum_AESA" xml:space="preserve">
+    <value>AESA - ATM End System Address (AESA) format</value>
+  </data>
+  <data name="AddressFormatEnum_E164" xml:space="preserve">
+    <value>E164 - E.164 format.</value>
+  </data>
+  <data name="AFSDBType" xml:space="preserve">
+    <value>Andrew File System Database Server (AFSDB)</value>
+  </data>
+  <data name="AFSDBType_Note" xml:space="preserve">
+    <value>Andrew File System Database (AFSDB) server record. Indicates the location of either of the following standard server subtypes: an AFS volume location (cell database) server or a Distributed Computing Environment (DCE) authenticated name server. Also, supports other user-defined server subtypes that use the AFSDB resource record format. (RFC 1183)</value>
+  </data>
+  <data name="AFSDB_ServerName" xml:space="preserve">
+    <value>FQDN specifying a host that has a server for the AFS cell specified in the owner name.</value>
+  </data>
+  <data name="AFSDB_Subtype" xml:space="preserve">
+    <value>Subtype of the host AFS server. For subtype 1 (value=1), the host has an AFS version 3.0 Volume Location Server for the named AFS cell. In the case of subtype 2 (value=2), the host has an authenticated name server holding the cell-root directory node for the named DCE/NCA cell.</value>
+  </data>
+  <data name="ATMAType" xml:space="preserve">
+    <value>ATM Address-to-Name (ATMA)</value>
+  </data>
+  <data name="ATMAType_Note" xml:space="preserve">
+    <value>ATM address (ATMA) record. Maps a DNS domain name to an ATM address.</value>
+  </data>
+  <data name="ATMA_ATMAddress" xml:space="preserve">
+    <value>Variable length string of octets containing the ATM address of the node/owner to which this RR pertains. The first 4 bytes of the array are used to store the size of the octet string. The most significant byte is stored in byte 0.</value>
+  </data>
+  <data name="ATMA_Format" xml:space="preserve">
+    <value>ATM address format. Valid values are: 0 indicating ATM End System Address (AESA) format and 1 indicating E.164 format.</value>
+  </data>
+  <data name="AType" xml:space="preserve">
+    <value>Address (A)</value>
+  </data>
+  <data name="AType_Note" xml:space="preserve">
+    <value>Returns a 32-bit IPv4 address, most commonly used to map hostnames to an IP address of the host, but also used for DNSBLs, storing subnet masks in RFC 1101, etc.</value>
+  </data>
+  <data name="A_IPAddress" xml:space="preserve">
+    <value>String representing the IPv4 address of the host.</value>
+  </data>
+  <data name="CNAMEType" xml:space="preserve">
+    <value>Canonical Name (CNAME)</value>
+  </data>
+  <data name="CNAMEType_Note" xml:space="preserve">
+    <value>Alias record. Indicates an alternate or alias DNS domain name for a name already specified in other resource record types used in this zone. The record is also known as the canonical name (CNAME) record type. (RFC 1035)</value>
+  </data>
+  <data name="CNAME_PrimaryName" xml:space="preserve">
+    <value>Canonical, or primary name for the owner of the CNAME record.</value>
+  </data>
+  <data name="HINFOType" xml:space="preserve">
+    <value>Host Information (HINFO)</value>
+  </data>
+  <data name="HINFOType_Note" xml:space="preserve">
+    <value>Host Information (HINFO) record. Indicates RFC-1700 reserved character string values for CPU and operating system types for mapping to specific DNS host names. This information is used by application protocols such as FTP that can use special procedures when communicating between computers of the same CPU and OS type. (RFC 1035)</value>
+  </data>
+  <data name="HINFO_CPU" xml:space="preserve">
+    <value>CPU type of the record owner.</value>
+  </data>
+  <data name="HINFO_OS" xml:space="preserve">
+    <value>Operating system of the record owner.</value>
+  </data>
+  <data name="ISDNType" xml:space="preserve">
+    <value>ISDN</value>
+  </data>
+  <data name="ISDNType_Note" xml:space="preserve">
+    <value>Integrated Services Digital Network (ISDN) record. Maps a DNS domain name to an ISDN telephone number. ISDN telephone numbers used with this record meet CCITT E.163/E.164 international telephone numbering standards. (RFC 1183)</value>
+  </data>
+  <data name="ISDN_ISDNNumber" xml:space="preserve">
+    <value>ISDN number and DDI of the record's owner.</value>
+  </data>
+  <data name="ISDN_SubAddress" xml:space="preserve">
+    <value>Subaddress of the owner, if defined.</value>
+  </data>
+  <data name="KEYType" xml:space="preserve">
+    <value>KEY</value>
+  </data>
+  <data name="KEYType_Note" xml:space="preserve">
+    <value>Used only for SIG(0) (RFC 2931) and TKEY (RFC 2930).[5] RFC 3445 eliminated their use for application keys and limited their use to DNSSEC.[6] RFC 3755 designates DNSKEY as the replacement within DNSSEC.[7] RFC 4025 designates IPSECKEY as the replacement for use with IPsec.[8]</value>
+  </data>
+  <data name="MBType" xml:space="preserve">
+    <value>Mailbox (MB)</value>
+  </data>
+  <data name="MBType_Note" xml:space="preserve">
+    <value>Mailbox (MB) record. Maps a specified domain mailbox name to a host that hosts this mailbox. (RFC 1035)</value>
+  </data>
+  <data name="MB_MBHost" xml:space="preserve">
+    <value>FQDN that specifies a host of the mailbox specified in the record's Owner Name.</value>
+  </data>
+  <data name="MDType" xml:space="preserve">
+    <value>Mail Agent for Domain (MD)</value>
+  </data>
+  <data name="MDType_Note" xml:space="preserve">
+    <value>a mail destination (Obsolete - use MX)</value>
+  </data>
+  <data name="MFType" xml:space="preserve">
+    <value>Mail Forwarding Agent for Domain (MF)</value>
+  </data>
+  <data name="MFType_Note" xml:space="preserve">
+    <value>a mail forwarder (Obsolete - use MX)</value>
+  </data>
+  <data name="MGType" xml:space="preserve">
+    <value>MG</value>
+  </data>
+  <data name="MGType_Note" xml:space="preserve">
+    <value>Mail group (MG) record. Adds domain mailboxes, each specified by a mailbox (MB) record in the current zone, as members of a domain mailing group that is identified by name in this record. (RFC 1035)</value>
+  </data>
+  <data name="MG_MGMailbox" xml:space="preserve">
+    <value>FQDN specifying a mailbox that is a member of the mail group specified by the record's owner name.</value>
+  </data>
+  <data name="MINFOType" xml:space="preserve">
+    <value>Mail Information (MINFO)</value>
+  </data>
+  <data name="MINFOType_Note" xml:space="preserve">
+    <value>Mailbox or mail list information (MINFO) record. Specifies a domain mailbox name to contact. This contact maintains a mail list or mailbox specified in this record. Also, specifies a mailbox for receiving error messages related to the mailing list or mailbox specified in this record. (RFC 1035)</value>
+  </data>
+  <data name="MINFO_ErrorMailbox" xml:space="preserve">
+    <value>FQDN specifying a mailbox to receive error messages related to either the mailing list, or to the mailbox specified by the owner name of the MINFO record.</value>
+  </data>
+  <data name="MINFO_ResponsibleMailbox" xml:space="preserve">
+    <value>FQDN specifying a mailbox responsible for the mailing list or mailbox specified in the record's Owner Name.</value>
+  </data>
+  <data name="MRType" xml:space="preserve">
+    <value>Mailbox Rename (MR)</value>
+  </data>
+  <data name="MRType_Note" xml:space="preserve">
+    <value>enamed mailbox (MR) record. Specifies a domain mailbox name, which is the proper rename of an existing specified mailbox (specified in an existing mailbox or an MB-type record in the zone). The main use for an MR record is as a forwarding entry for a user who has moved to a different mailbox. If used, MR records do not cause additional section processing. (RFC 1035)</value>
+  </data>
+  <data name="MR_MRMailbox" xml:space="preserve">
+    <value>FQDN specifying a mailbox that is the proper rename of the mailbox specified in the record's owner name.</value>
+  </data>
+  <data name="MXType" xml:space="preserve">
+    <value>Mail Exchanger (MX)</value>
+  </data>
+  <data name="MXType_Note" xml:space="preserve">
+    <value>Mail exchanger (MX) record. Provides message routing to a specified mail exchange host that is acting as a mail exchanger for a specified DNS domain name. MX records use a 16-bit integer to indicate host priority in message routing where multiple mail exchange hosts are specified. For each mail exchange host specified in this record type, a corresponding host address (A) type record is needed. (RFC 1035)</value>
+  </data>
+  <data name="MX_MailExchange" xml:space="preserve">
+    <value>FQDN specifying a host willing to act as a mail exchange for the owner name.</value>
+  </data>
+  <data name="MX_Preference" xml:space="preserve">
+    <value>Preference given to this RR among others at the same owner. Lower values are preferred.</value>
+  </data>
+  <data name="NSType" xml:space="preserve">
+    <value>Name Server (NS)</value>
+  </data>
+  <data name="NSType_Note" xml:space="preserve">
+    <value>Delegates a DNS zone to use the given authoritative name servers</value>
+  </data>
+  <data name="NS_NSHost" xml:space="preserve">
+    <value>Authoritative host for the domain.</value>
+  </data>
+  <data name="NXTType" xml:space="preserve">
+    <value>Next (NXT)</value>
+  </data>
+  <data name="NXTType_Note" xml:space="preserve">
+    <value>Next (NXT) record. NXT resource records indicate the nonexistence of a name in a zone by creating a chain of all of the literal owner names in that zone. They also indicate what resource record types are present for an existing name.</value>
+  </data>
+  <data name="PTRType" xml:space="preserve">
+    <value>Pointer (PTR)</value>
+  </data>
+  <data name="PTRType_Note" xml:space="preserve">
+    <value>Pointer to a canonical name. Unlike a CNAME, DNS processing does NOT proceed, just the name is returned. The most common use is for implementing reverse DNS lookups, but other uses include such things as DNS-SD.</value>
+  </data>
+  <data name="PTR_PTRDomainName" xml:space="preserve">
+    <value>FQDN of the PTR record data.</value>
+  </data>
+  <data name="RPType" xml:space="preserve">
+    <value>Responsible Person (RP)</value>
+  </data>
+  <data name="RPType_Note" xml:space="preserve">
+    <value>Information about the responsible person(s) for the domain. Usually an email address with the @ replaced by a .</value>
+  </data>
+  <data name="RP_RPMailbox" xml:space="preserve">
+    <value>FQDN specifying the mailbox for the responsible person.</value>
+  </data>
+  <data name="RP_TXTDomainName" xml:space="preserve">
+    <value>FQDN for which TXT Resource Records exist.</value>
+  </data>
+  <data name="RTType" xml:space="preserve">
+    <value>Route Through (RT)</value>
+  </data>
+  <data name="RTType_Note" xml:space="preserve">
+    <value>Route Through (RT) record. Provides an intermediate-route-through binding for internal hosts that do not have their own direct wide area network (WAN) address. This record uses the same data format as the MX record type to indicate two required fields: a 16-bit integer that represents preference for each intermediate route and the DNS domain name for the route-through host as it appears elsewhere in an A, X25, or ISDN record for the zone. (RFC 1183)</value>
+  </data>
+  <data name="RT_IntermediateHost" xml:space="preserve">
+    <value>FQDN specifying a host to serve as an intermediate in reaching the host specified by owner.</value>
+  </data>
+  <data name="RT_Preference" xml:space="preserve">
+    <value>Preference given to this RR among others at the same owner. Lower values are preferred.</value>
+  </data>
+  <data name="SIGType" xml:space="preserve">
+    <value>Signature (SIG)</value>
+  </data>
+  <data name="SIGType_Note" xml:space="preserve">
+    <value>Signature record used in SIG(0) (RFC 2931) and TKEY (RFC 2930).[7] RFC 3755 designated RRSIG as the replacement for SIG for use within DNSSEC.[7]</value>
+  </data>
+  <data name="SOAType" xml:space="preserve">
+    <value>Start Of Authority (SOA)</value>
+  </data>
+  <data name="SOAType_Note" xml:space="preserve">
+    <value>Specifies authoritative information about a DNS zone, including the primary name server, the email of the domain administrator, the domain serial number, and several timers relating to refreshing the zone.</value>
+  </data>
+  <data name="SOA_ExpireLimit" xml:space="preserve">
+    <value>Time, in seconds, before an unresponsive zone is no longer authoritative.</value>
+  </data>
+  <data name="SOA_MinimumTTL" xml:space="preserve">
+    <value>Lower limit on the time, in seconds, that a DNS Server or Caching resolver are allowed to cache any resource record from the zone to which this record belongs.</value>
+  </data>
+  <data name="SOA_PrimaryServer" xml:space="preserve">
+    <value>Authoritative DNS Server for the zone to which the record belongs.</value>
+  </data>
+  <data name="SOA_RefreshInterval" xml:space="preserve">
+    <value>Time, in seconds, before the zone containing this record should be refreshed.</value>
+  </data>
+  <data name="SOA_ResponsibleParty" xml:space="preserve">
+    <value>Name of the responsible party for the zone to which the record belongs.</value>
+  </data>
+  <data name="SOA_RetryDelay" xml:space="preserve">
+    <value>Time, in seconds, before retrying a failed refresh of the zone to which this record belongs.</value>
+  </data>
+  <data name="SRVType" xml:space="preserve">
+    <value>Service (SRV)</value>
+  </data>
+  <data name="SRVType_Note" xml:space="preserve">
+    <value>Generalized service location record, used for newer protocols instead of creating protocol-specific records such as MX.</value>
+  </data>
+  <data name="SRV_Port" xml:space="preserve">
+    <value>Port used on the target host of a protocol service.</value>
+  </data>
+  <data name="SRV_Priority" xml:space="preserve">
+    <value>Priority of the target host specified in the owner name. Lower numbers imply higher priorities.</value>
+  </data>
+  <data name="SRV_Weight" xml:space="preserve">
+    <value>Weight of the target host. This is useful when selecting among hosts that have the same priority. The chances of using this host should be proportional to its weight.</value>
+  </data>
+  <data name="SubtypeEnum_AuthNS" xml:space="preserve">
+    <value>AuthNS - host has an authenticated name server holding the cell-root directory node for the named DCE/NCA cell.</value>
+  </data>
+  <data name="SubtypeEnum_Ver3" xml:space="preserve">
+    <value>Ver3 - host has an AFS version 3.0 Volume Location Server for the named AFS cell</value>
+  </data>
+  <data name="TXTType" xml:space="preserve">
+    <value>Text (TXT)</value>
+  </data>
+  <data name="TXTType_Note" xml:space="preserve">
+    <value>Originally for arbitrary human-readable text in a DNS record. Since the early 1990s, however, this record more often carries machine-readable data, such as specified by RFC 1464, opportunistic encryption, Sender Policy Framework, DomainKeys, DNS-SD, etc.</value>
+  </data>
+  <data name="TXT_DescriptiveText" xml:space="preserve">
+    <value>Descriptive text, the semantics of which depend on the owner domain.</value>
+  </data>
+  <data name="WINSRType" xml:space="preserve">
+    <value>WINS-Reverse (WINSR)</value>
+  </data>
+  <data name="WINSRType_Note" xml:space="preserve">
+    <value>DNS Windows Internet Name Service reverse-lookup (WINSR)</value>
+  </data>
+  <data name="WINSType" xml:space="preserve">
+    <value>WINS</value>
+  </data>
+  <data name="WINSType_Note" xml:space="preserve">
+    <value>DNS Windows Internet Name Service (WINS)</value>
+  </data>
+  <data name="WKSType" xml:space="preserve">
+    <value>Well-Known Service (WKS)</value>
+  </data>
+  <data name="WKSType_Note" xml:space="preserve">
+    <value>Well Known Service (WKS) record. Describes the well-known TCP/IP services supported by a particular protocol on a particular IP address. WKS records provide TCP and UDP availability information for TCP/IP servers. If a server supports both TCP and UDP for a well-known service or if the server has multiple IP addresses that support a service, multiple WKS records are used. (RFC 1035)</value>
+  </data>
+  <data name="WKS_InternetAddress" xml:space="preserve">
+    <value>Internet IP address for the record's owner.</value>
+  </data>
+  <data name="WKS_IPProtocol" xml:space="preserve">
+    <value>String representing the IP protocol for this record. Valid values are UDP or TCP.</value>
+  </data>
+  <data name="WKS_Services" xml:space="preserve">
+    <value>String containing all services used by the Well Known Service (WKS) record.</value>
+  </data>
+  <data name="X25Type" xml:space="preserve">
+    <value>X.25 (X25)</value>
+  </data>
+  <data name="X25Type_Note" xml:space="preserve">
+    <value>X.25 (X25) record. Maps a DNS domain name to a Public Switched Data Network (PSDN) address, such as X.121 addresses, which are typically used to identify each point of service located on a public X.25 network. (RFC 1183)</value>
+  </data>
+  <data name="X25_PSDNAddress" xml:space="preserve">
+    <value>PSDN address of the owner of the RR.</value>
+  </data>
+  <data name="RecordClassEnum_CH" xml:space="preserve">
+    <value>CH - CHAOS</value>
+  </data>
+  <data name="RecordClassEnum_CS" xml:space="preserve">
+    <value>CS - CSNET</value>
+  </data>
+  <data name="RecordClassEnum_HS" xml:space="preserve">
+    <value>HS - Hesiod</value>
+  </data>
+  <data name="RecordClassEnum_IN" xml:space="preserve">
+    <value>IN - Internet</value>
+  </data>
+  <data name="RecordClass" xml:space="preserve">
+    <value>Resource Record Class</value>
+  </data>
+  <data name="SOA_SerialNumber" xml:space="preserve">
+    <value>Serial number of the SOA record.</value>
+  </data>
+  <data name="TimeSpanFormat" xml:space="preserve">
+    <value>DDDDD.HH:MM:SS</value>
+  </data>
+  <data name="TTL" xml:space="preserve">
+    <value>TTL</value>
+  </data>
+  <data name="AuditLogs" xml:space="preserve">
+    <value>Audit Logs</value>
+  </data>
+  <data name="MetaDescription" xml:space="preserve">
+    <value>Web Admin for Microsoft DNS, Dror Gluska</value>
+  </data>
+  <data name="MappingFlagEnum_NonReplication" xml:space="preserve">
+    <value>No-replication</value>
+  </data>
+  <data name="MappingFlagEnum_Replication" xml:space="preserve">
+    <value>Replication</value>
+  </data>
+  <data name="NewRecordType" xml:space="preserve">
+    <value>Select New </value>
+  </data>
+  <data name="ResourceRecordEnum_A" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="ResourceRecordEnum_AAAA" xml:space="preserve">
+    <value>AAAA</value>
+  </data>
+  <data name="ResourceRecordEnum_AFSDB" xml:space="preserve">
+    <value>AFSDB</value>
+  </data>
+  <data name="ResourceRecordEnum_ATMA" xml:space="preserve">
+    <value>ATMA</value>
+  </data>
+  <data name="ResourceRecordEnum_CNAME" xml:space="preserve">
+    <value>CNAME</value>
+  </data>
+  <data name="ResourceRecordEnum_HINFO" xml:space="preserve">
+    <value>HINFO</value>
+  </data>
+  <data name="ResourceRecordEnum_ISDN" xml:space="preserve">
+    <value>ISDN</value>
+  </data>
+  <data name="ResourceRecordEnum_KEY" xml:space="preserve">
+    <value>KEY</value>
+  </data>
+  <data name="ResourceRecordEnum_MB" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="ResourceRecordEnum_MD" xml:space="preserve">
+    <value>MD</value>
+  </data>
+  <data name="ResourceRecordEnum_MF" xml:space="preserve">
+    <value>MF</value>
+  </data>
+  <data name="ResourceRecordEnum_MG" xml:space="preserve">
+    <value>MG</value>
+  </data>
+  <data name="ResourceRecordEnum_MINFO" xml:space="preserve">
+    <value>MINFO</value>
+  </data>
+  <data name="ResourceRecordEnum_MR" xml:space="preserve">
+    <value>MR</value>
+  </data>
+  <data name="ResourceRecordEnum_MX" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="ResourceRecordEnum_NS" xml:space="preserve">
+    <value>NS</value>
+  </data>
+  <data name="ResourceRecordEnum_NXT" xml:space="preserve">
+    <value>NXT</value>
+  </data>
+  <data name="ResourceRecordEnum_PTR" xml:space="preserve">
+    <value>PTR</value>
+  </data>
+  <data name="ResourceRecordEnum_RP" xml:space="preserve">
+    <value>RP</value>
+  </data>
+  <data name="ResourceRecordEnum_RT" xml:space="preserve">
+    <value>RT</value>
+  </data>
+  <data name="ResourceRecordEnum_SIG" xml:space="preserve">
+    <value>SIG</value>
+  </data>
+  <data name="ResourceRecordEnum_SOA" xml:space="preserve">
+    <value>SOA</value>
+  </data>
+  <data name="ResourceRecordEnum_SRV" xml:space="preserve">
+    <value>SRV</value>
+  </data>
+  <data name="ResourceRecordEnum_TXT" xml:space="preserve">
+    <value>TXT</value>
+  </data>
+  <data name="ResourceRecordEnum_WINS" xml:space="preserve">
+    <value>WINS</value>
+  </data>
+  <data name="ResourceRecordEnum_WINSR" xml:space="preserve">
+    <value>WINSR</value>
+  </data>
+  <data name="ResourceRecordEnum_WKS" xml:space="preserve">
+    <value>WKS</value>
+  </data>
+  <data name="ResourceRecordEnum_X25" xml:space="preserve">
+    <value>X25</value>
+  </data>
+  <data name="WINS_CacheTimeout" xml:space="preserve">
+    <value>Time, in seconds, that a DNS Server using WINS Look up may cache the WINS server's response.</value>
+  </data>
+  <data name="WINS_LookupTimeout" xml:space="preserve">
+    <value>Time, in seconds, that a DNS Server attempts resolution using WINS Look up.</value>
+  </data>
+  <data name="WINS_MappingFlag" xml:space="preserve">
+    <value>WINS mapping flag that specifies whether the record must be included into the zone replication.</value>
+  </data>
+  <data name="WINS_WinsServers" xml:space="preserve">
+    <value>IP addresses of WINS servers</value>
+  </data>
+  <data name="recordName" xml:space="preserve">
+    <value>Record Name</value>
+  </data>
+  <data name="SRV_SRVDomainName" xml:space="preserve">
+    <value>FQDN of the PTR record data.</value>
+  </data>
+  <data name="AAAA_IPv6Address" xml:space="preserve">
+    <value>IPv6 Address</value>
+  </data>
+  <data name="MD_MDHost" xml:space="preserve">
+    <value>Mail destination domain</value>
+  </data>
+  <data name="MF_MFHost" xml:space="preserve">
+    <value>Mail forwarding host</value>
+  </data>
+</root>

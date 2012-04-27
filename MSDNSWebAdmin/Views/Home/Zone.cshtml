@@ -1,0 +1,186 @@
+﻿@model Zone
+@using DNSManagement
+
+
+<h2>@Model.Name</h2>
+
+<div class="divPanel">
+    <fieldset>
+    <legend>
+        General:
+    </legend>
+
+    Status: 
+        @if (Model.Shutdown == true)
+            {
+                <text>Zone not loaded</text>
+            }
+            else if (Model.Paused == true)
+            {
+                <text>Paused</text>
+            }
+            else
+            {
+                <text>Running</text>
+            }
+                                 
+             
+    @*<a href="#" onclick="ZonePause(this,'@Model.DnsServerName', '@Model.Name');">Pause</a><br />
+
+    Type: @Model.ZoneType <a href="">Change</a><br />*@
+
+    @*Replication: All DNS servers in this domain <a href="">Change...</a><br />
+
+    <hr />
+
+    <div>Data is stored in Active Directory</div>
+
+    Dynamic updates: <select><option>None</option><option>Nonsecure and secure</option><option>Secure only</option></select><br />
+
+    <img src="exclamation" />
+    Allowing nonsecure dynamic updates is a significant security vulnerability because updates can be accepted from untrusted sources
+    <br />
+
+    To set aging/scavenging properties, click Aging. <a href="">Aging...</a>
+*@
+
+     </fieldset>
+</div>
+@*
+<div class="divPanel">
+    <fieldset>
+        <legend>
+            Start of Authority(SOA):
+        </legend>
+
+    Serial number:<br />
+    <input  type="text" /> <a href="">Increment</a>
+    <br />
+
+    Primary server:<br />
+    <input type="text" /> <a href="">Browse...</a>
+    <br />
+
+    Responsible person:
+    <input type="text" /> <a href="">Browse...</a>
+    <br />
+
+    <table>
+        <tr>
+            <td>Refresh interval:</td>
+            <td><input type="text" /></td>
+            <td><select><option>seconds</option><option>minutes</option><option>hours</option><option>days</option></select></td>
+        </tr>
+        <tr>
+            <td>Retry interval:</td>
+            <td><input type="text" /></td>
+            <td><select><option>seconds</option><option>minutes</option><option>hours</option><option>days</option></select></td>
+        </tr>
+        <tr>
+            <td>Expires after:</td>
+            <td><input type="text" /></td>
+            <td><select><option>seconds</option><option>minutes</option><option>hours</option><option>days</option></select></td>
+        </tr>
+        <tr>
+            <td>Minimum (default) TTL:</td>
+            <td><input type="text" /></td>
+            <td><select><option>seconds</option><option>minutes</option><option>hours</option><option>days</option></select></td>
+        </tr>
+    </table>
+
+    TTL for this record: <input type="text" /> (DDDDD:HH.MM.SS)
+    </fieldset>
+</div>
+
+<div class="divPanel">
+    <fieldset>
+    <legend>
+        Name Servers:
+    </legend>
+    <div>To add name servers to the list, click Add.</div>
+    Name servers:<br />
+    <table>
+        <thead>
+            <tr>
+                <th>Server Fully Qualified Domain Name (FQDN)</th>
+                <th>IP Address</th>
+            </tr>
+        </thead>
+    </table>
+
+    <a href="">Add...</a> 
+    <a href="">Edit...</a>
+    <a href="">Remove</a>
+
+    <br />
+
+    <div>* represents an IP address retrieved as the result of a DNS query and may not represent actual records stored on this server.</div>
+    </fieldset>
+</div>
+
+<div class="divPanel">
+    <fieldset>
+        <legend>
+            WINS:
+        </legend>
+
+    <div>You can use WINS to resolve names not found by querying the DNS namespace. WINS only supports IPv4 addresses.</div>
+
+    <label><input type="checkbox" />Use WINS forward lookup</label><br />
+    <label><input type="checkbox" />Do not replicate this record</label><br />
+
+    IP address: <br />
+    <input type="text" /> <a href="">Add</a><br />
+    <select multiple="multiple">
+            
+    </select>
+    <a href="">Remove</a>
+    <a href="">Up</a>
+    <a href="">Down</a>
+    <br />
+
+    <a href="">Advanced...</a>
+    </fieldset>
+</div>
+
+<div class="divPanel">
+    <fieldset>
+        <legend>
+            Zone Transfers:
+        </legend>
+
+    <div>A zone transfer sends a copy of the zone to the servers that request a copy</div>
+   
+    <label><input type="checkbox" />Allow zone transfers:</label><br />
+    <label><input type="radio" name="zonetransfer" />To any server</label>
+    <label><input type="radio" name="zonetransfer" />Only to the servers listed on the Name Servers tab</label>
+    <label><input type="radio" name="zonetransfer" />Only to the following servers</label>
+
+    <table>
+        <thead>
+            <tr>
+                <th>IP Address</th>
+                <th>Server FQDN</th>
+            </tr>
+        </thead>
+    </table>
+
+    <a href="">Edit</a>
+
+    <br />
+
+    To specify secondary servers to be notified of zone updates, click Notify. <a href="">Notify</a>
+    </fieldset>
+</div>*@
+
+
+@Html.DropDownListForModel("NewRecordType", DNSManagement.RR.ResourceRecord.ResourceRecordEnum.A) <a href="#" onclick="resource_New('@Model.DnsServerName','@Model.ContainerName',$('#NewRecordType').val())">New</a>
+
+
+@{Html.RenderPartial("ZoneResources", Model.GetRecords());}
+
+
+@*<div style="float:right;">
+    <a href="#" onclick="">Cancel</a>
+    <input type="button" value="Save" onclick="" />
+</div>*@

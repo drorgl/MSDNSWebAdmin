@@ -1,0 +1,35 @@
+﻿@{
+    var records = ViewData["records"] as List<MSDNSWebAdmin.AppCode.AuditRecord>;
+}
+
+<h2>@Html.GetLocalizedString("AuditLogs")</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Server</th>
+            <th>Username</th>
+            <th>Client IP</th>
+            <th>Timestamp</th>
+            <th>Text</th>
+            <th>Zone</th>
+            <th>Record</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in records)
+        {
+            <tr>
+                <td>@r.Type</td>
+                <td>@r.Server</td>
+                <td>@r.Username</td>
+                <td>@r.ClientIP</td>
+                <td>@r.TimestampUTC.ToLocalTime().ToString()</td>
+                <td>@r.Text</td>
+                <td>@r.Zone</td>
+                <td>@r.RecordName</td>
+            </tr>
+        }
+    </tbody>
+</table>

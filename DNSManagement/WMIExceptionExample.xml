@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<INSTANCE CLASSNAME="__ExtendedStatus">
+  <QUALIFIER NAME="abstract" PROPAGATED="true" TYPE="boolean" OVERRIDABLE="false" TOINSTANCE="true">
+    <VALUE>TRUE</VALUE>
+  </QUALIFIER>
+  <PROPERTY NAME="__PATH" CLASSORIGIN="___SYSTEM" TYPE="string"></PROPERTY>
+  <PROPERTY NAME="__NAMESPACE" CLASSORIGIN="___SYSTEM" TYPE="string"></PROPERTY>
+  <PROPERTY NAME="__SERVER" CLASSORIGIN="___SYSTEM" TYPE="string"></PROPERTY>
+  <PROPERTY.ARRAY NAME="__DERIVATION" CLASSORIGIN="___SYSTEM" TYPE="string">
+    <VALUE.ARRAY>
+      <VALUE>__NotifyStatus</VALUE>
+    </VALUE.ARRAY>
+  </PROPERTY.ARRAY>
+  <PROPERTY NAME="__PROPERTY_COUNT" CLASSORIGIN="___SYSTEM" TYPE="sint32">
+    <VALUE>5</VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="__RELPATH" CLASSORIGIN="___SYSTEM" TYPE="string"></PROPERTY>
+  <PROPERTY NAME="__DYNASTY" CLASSORIGIN="___SYSTEM" TYPE="string">
+    <VALUE>__NotifyStatus</VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="__SUPERCLASS" CLASSORIGIN="___SYSTEM" TYPE="string">
+    <VALUE>__NotifyStatus</VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="__CLASS" CLASSORIGIN="___SYSTEM" TYPE="string">
+    <VALUE>__ExtendedStatus</VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="__GENUS" CLASSORIGIN="___SYSTEM" TYPE="sint32">
+    <VALUE>2</VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="Description" CLASSORIGIN="__ExtendedStatus" TYPE="string">
+    <QUALIFIER NAME="CIMTYPE" PROPAGATED="true" TYPE="string" TOINSTANCE="true">
+      <VALUE>string</VALUE>
+    </QUALIFIER>
+    <VALUE>
+      Failed to start DNS because An instance of the service is already running.
+    </VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="Operation" CLASSORIGIN="__ExtendedStatus" TYPE="string">
+    <QUALIFIER NAME="CIMTYPE" PROPAGATED="true" TYPE="string" TOINSTANCE="true">
+      <VALUE>string</VALUE>
+    </QUALIFIER>
+    <VALUE>ExecMethod</VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="ParameterInfo" CLASSORIGIN="__ExtendedStatus" TYPE="string">
+    <QUALIFIER NAME="CIMTYPE" PROPAGATED="true" TYPE="string" TOINSTANCE="true">
+      <VALUE>string</VALUE>
+    </QUALIFIER>
+    <VALUE>MicrosoftDNS_Server.Name="DNSSRV"</VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="ProviderName" CLASSORIGIN="__ExtendedStatus" TYPE="string">
+    <QUALIFIER NAME="CIMTYPE" PROPAGATED="true" TYPE="string" TOINSTANCE="true">
+      <VALUE>string</VALUE>
+    </QUALIFIER>
+    <VALUE>WinMgmt</VALUE>
+  </PROPERTY>
+  <PROPERTY NAME="StatusCode" CLASSORIGIN="__NotifyStatus" PROPAGATED="true" TYPE="uint32">
+    <QUALIFIER NAME="CIMTYPE" PROPAGATED="true" TYPE="string" TOINSTANCE="true">
+      <VALUE>uint32</VALUE>
+    </QUALIFIER>
+  </PROPERTY>
+</INSTANCE>

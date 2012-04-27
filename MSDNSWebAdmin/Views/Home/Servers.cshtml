@@ -1,0 +1,66 @@
+﻿@model MSDNSWebAdmin.Models.ServersModel
+
+
+<h2>@Html.GetLocalizedString("Servers")</h2>
+
+<a href="javascript:Servers_AddNew();">@Html.GetLocalizedString("AddNew")</a>
+
+<div id="serveradd" style="display:none;">
+@using (Html.BeginForm())
+{ 
+        @Html.ValidationSummary(true, "Server details missing")
+        <div>
+            <fieldset>
+                <legend>New Server</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.Name)
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
+
+                <div>
+                    <a href="javascript:Servers_Save();">Save</a>
+                    <a href="javascript:Servers_Cancel();">Cancel</a>
+                </div>
+            </fieldset>
+        </div>
+}
+</div>
+
+<table id="serverList">
+    <thead>
+        <tr>
+            <th>Server</th>
+            <th>IP</th>
+            <th>Status</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var servers = ViewData["servers"] as List<MSDNSWebAdmin.AppCode.DNSServer>;}
+            @if (servers != null)
+            {
+                foreach (var server in servers)
+                {
+                    <tr>
+                        <td>@server.ServerName</td>
+                        <td>@NetworkHelper.GetFirstIp(server.ServerName)</td>
+                        <td>(please wait...)</td>
+                        <td>
+                            <a href="javascript:Servers_Delete('@server.ServerName');" title="Delete @server.ServerName"><img alt="Delete @server.ServerName" src="../../Content/icons/delete.png" /></a>
+
+                            <a href="javascript:ServerServiceChange('@server.ServerName','stop');" title="Stop @server.ServerName"><img alt="Delete @server.ServerName" src="../../Content/icons/stop.png" /></a>
+                            <a href="javascript:ServerServiceChange('@server.ServerName','start');" title="Start @server.ServerName"><img alt="Start @server.ServerName" src="../../Content/icons/play.png" /> </a>
+                            <a href="javascript:ServerServiceChange('@server.ServerName','restart');" title="Restart @server.ServerName"><img alt="Restart @server.ServerName" src="../../Content/icons/restart.png" /> </a>
+                            <a href="javascript:ServerServiceChange('@server.ServerName','pause');" title="Pause @server.ServerName"><img alt="Pause @server.ServerName" src="../../Content/icons/pause.png" /> </a>
+                            <a href="javascript:ServerServiceChange('@server.ServerName','resume');" title="Resume @server.ServerName"><img alt="Resume @server.ServerName" src="../../Content/icons/play.png" /> </a>
+                        </td>
+                    </tr>
+                }
+            }
+    </tbody>
+</table>
